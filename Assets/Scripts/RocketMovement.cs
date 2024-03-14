@@ -19,9 +19,9 @@ public class RocketMovement : MonoBehaviour
     {
         if (Input.touchCount > 0)
         {
-            Touch touch = Input.GetTouch(0);
+            Touch _touch = Input.GetTouch(0);
 
-            Ray ray = Camera.main.ScreenPointToRay(touch.position);
+            Ray ray = Camera.main.ScreenPointToRay(_touch.position);
             RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit))
