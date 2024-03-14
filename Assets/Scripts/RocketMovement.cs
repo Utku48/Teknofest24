@@ -1,0 +1,64 @@
+﻿using DG.Tweening;
+using Unity.VisualScripting;
+using UnityEngine;
+
+
+public class RocketMovement : MonoBehaviour
+{
+    [SerializeField] private GameObject _rocket;
+    [SerializeField] private Transform _target;
+    public bool rotate = true;
+
+    private void Start()
+    {
+
+    }
+
+
+    private void Update()
+    {
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+
+            Ray ray = Camera.main.ScreenPointToRay(touch.position);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                GameObject _hitPlanet = hit.collider.gameObject;
+
+                if (_hitPlanet.GetComponent<Planets>())
+                {
+                    rotate = !rotate;
+                    GoPlanet(_hitPlanet.transform.position);
+                    Rotation();
+                }
+
+            }
+        }
+    }
+
+
+    public void GoPlanet(Vector3 _planetPos)
+    {
+
+        _rocket.transform.DOMove(_planetPos, 1f);
+    }
+
+    void Rotation()
+    {
+       
+
+        if (rotate == false)
+        {
+            _rocket.transform.DORotate(new Vector3(transform.rotation.x, transform.rotation.y, -60), 2f);
+        }
+        else
+        {
+            _rocket.transform.DORotate(new Vector3(transform.rotation.x, transform.rotation.y, 60), 2f);
+        }
+    }
+}
+
+
