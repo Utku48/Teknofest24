@@ -8,15 +8,15 @@ public class Planets : MonoBehaviour
 
     public enum PlanetsEnum
     {
-        Venus,
-        Mars,
-        Neptune,
-        Uranus,
-        Pluton,
-        Saturn,
-        Moon,
-        Earth,
-        Merkur
+        Lvl1,
+        Lvl2,
+        Lvl3,
+        Lvl4,
+        Lvl5,
+        Lvl6,
+        Lvl7,
+        Lvl8,
+        Lvl9
     }
 
     public PlanetsEnum Planet()

@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class RocketMovement : MonoBehaviour
 {
+
+
+
+
     [SerializeField] private GameObject _rocket;
     [SerializeField] private Transform _target;
     public bool rotate = true;
@@ -32,7 +36,7 @@ public class RocketMovement : MonoBehaviour
                 {
                     rotate = !rotate;
                     GoPlanet(_hitPlanet.transform.position);
-                    Rotation();
+
                 }
 
             }
@@ -46,19 +50,5 @@ public class RocketMovement : MonoBehaviour
         _rocket.transform.DOMove(_planetPos, 1f);
     }
 
-    void Rotation()
-    {
-       
 
-        if (rotate == false)
-        {
-            _rocket.transform.DORotate(new Vector3(transform.rotation.x, transform.rotation.y, -60), 2f);
-        }
-        else
-        {
-            _rocket.transform.DORotate(new Vector3(transform.rotation.x, transform.rotation.y, 60), 2f);
-        }
-    }
 }
-
-
