@@ -5,19 +5,9 @@ using UnityEngine;
 
 public class RocketMovement : MonoBehaviour
 {
-
-
-
-
     [SerializeField] private GameObject _rocket;
     [SerializeField] private Transform _target;
     public bool rotate = true;
-
-    private void Start()
-    {
-
-    }
-
 
     private void Update()
     {

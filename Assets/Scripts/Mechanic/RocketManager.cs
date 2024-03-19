@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class RocketManager : MonoBehaviour
 {
-    public JSonManager jsonManager;
+    public JSonManagerRocket jsonManager;
 
     [SerializeField] private Camera _cam;
 
