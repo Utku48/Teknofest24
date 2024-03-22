@@ -10,7 +10,12 @@ public class CharacterBoxTrigger : MonoBehaviour
     {
         if (other.gameObject.CompareTag("character"))
         {
-            Debug.Log("karakterGeldi");
+            if (other.gameObject.name == "Alien")
+            {
+                Debug.Log("ccccc");
+                StarManager.Instance.DecreaseStar(8);
+            }
+        
             Debug.Log(other.gameObject.name);
         }
     }

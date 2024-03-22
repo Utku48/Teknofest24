@@ -3,9 +3,11 @@ using UnityEngine;
 
 public class CharactersType : MonoBehaviour
 {
-    public CharacterEnum characterType;
+    public CharacterName characterName;
 
-    public enum CharacterEnum
+
+
+    public enum CharacterName
     {
         boy,
         girl,
@@ -15,9 +17,14 @@ public class CharactersType : MonoBehaviour
     }
 
 
-    public CharacterEnum _characterType()
+    public CharacterName _characterName()
     {
-        return characterType;
+        
+        return characterName;
+        
     }
+
+
+ 
 
 }

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using TMPro;
-using Unity.VisualScripting;
+
 
 public class StarManager : MonoBehaviour
 {
@@ -33,5 +33,18 @@ public class StarManager : MonoBehaviour
     {
         star += 1;
         jSonManagerStar.Save();
+    }
+
+    public void DecreaseStar(int valueOfCharacter) //butona basıp Alien gelince burası çalışyor. CharacterBoxTrigger içerisine bak
+    {
+        if (star <= 0)
+        {
+            Debug.Log("star sıfırdan küçük olamaz");
+        }
+        else
+        {
+            star -= valueOfCharacter;
+            jSonManagerStar.Save();
+        }
     }
 }
