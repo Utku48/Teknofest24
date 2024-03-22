@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 29656f22f58965c419009690e6cae390
+guid: dbfcb471089065f4989f6220dca46351
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,13 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Gezegen5
-    second: {fileID: 2100000, guid: 50ac15caaf022e440b44a0b8c5e31834, type: 2}
+      name: LAV
+    second: {fileID: 2100000, guid: 64de542a08d34644685367a61a073a46, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: "Gezegen5 Yan Ta\u015F"
-    second: {fileID: 2100000, guid: 749e96eb2838afa458608427944561fc, type: 2}
+      name: "Ta\u015F"
+    second: {fileID: 2100000, guid: 64de542a08d34644685367a61a073a46, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
