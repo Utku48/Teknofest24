@@ -4,7 +4,8 @@ using UnityEngine;
 public class CharactersType : MonoBehaviour
 {
     public CharacterName characterName;
-
+    
+    public int valueOfCharacter;   
 
 
     public enum CharacterName

@@ -31,6 +31,8 @@ public class JSonManagerStar : MonoBehaviour
         string saveJson = JsonUtility.ToJson(starData, true);
 
         File.WriteAllText(Application.persistentDataPath + "/CoinData.json", saveJson);
+
+
     }
 
     public void Load()

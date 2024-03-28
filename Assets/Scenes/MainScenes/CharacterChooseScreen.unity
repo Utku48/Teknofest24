@@ -195,6 +195,7 @@ MonoBehaviour:
   _starCounter: {fileID: 1920779085}
   star: 0
   jSonManagerStar: {fileID: 28237029}
+  decreaseValue: 0
 --- !u!114 &28237029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -745,6 +746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93154f34bd967a84cb64c789e0df6ff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _characterType: {fileID: 0}
 --- !u!1 &643524683
 GameObject:
   m_ObjectHideFlags: 0
@@ -1235,7 +1237,7 @@ MonoBehaviour:
       - m_Target: {fileID: 28237028}
         m_TargetAssemblyTypeName: StarManager, Assembly-CSharp
         m_MethodName: DecreaseStar
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2155,6 +2157,11 @@ PrefabInstance:
       propertyPath: characterName
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 418294367513120291, guid: a4444ce3fe7f8164cbc9d2c920aab76f,
+        type: 3}
+      propertyPath: valueOfCharacter
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5970634373463476994, guid: a4444ce3fe7f8164cbc9d2c920aab76f,
         type: 3}
       propertyPath: m_RootOrder
@@ -2227,6 +2234,11 @@ PrefabInstance:
         type: 3}
       propertyPath: characterName
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 892023708819714551, guid: 4a45439ca531a5246b94cd2719fe3c07,
+        type: 3}
+      propertyPath: valueOfCharacter
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5425665574754266380, guid: 4a45439ca531a5246b94cd2719fe3c07,
         type: 3}
@@ -2365,6 +2377,11 @@ PrefabInstance:
         type: 3}
       propertyPath: characterName
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658087889842421216, guid: 801ab63798599214e874af6493efb37b,
+        type: 3}
+      propertyPath: valueOfCharacter
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
