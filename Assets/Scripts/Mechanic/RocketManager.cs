@@ -30,9 +30,8 @@ public class RocketManager : MonoBehaviour
             EnablePlanetColliders();
 
             StartCoroutine(LoadScene(other.gameObject.GetComponent<Planets>().item.ToString(), other.gameObject));//Roketin Gezegen Level'ına girmesi
-
-
             jsonManager.Save();
+
         }
     }
 
