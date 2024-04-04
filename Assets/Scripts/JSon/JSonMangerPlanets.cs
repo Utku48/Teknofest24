@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using static Planets;
+using static UnityEditor.Progress;
 
 public class JSonMangerPlanets : MonoBehaviour
 {
-    PlanetsData _planetsData;
+
 
     private void Awake()
     {
@@ -13,25 +15,33 @@ public class JSonMangerPlanets : MonoBehaviour
     }
 
     #region Save&Load
-    private void LoadPlanetsData()
+    public void LoadPlanetsData()
     {
-        if (File.Exists(Application.persistentDataPath + "/Planets.json"))
+        foreach (var item in GameManager.Instance.planets)
         {
-            Load();
+            if (File.Exists(Application.persistentDataPath + "/" + item.lvlID.ToString() + ".json"))
+            {
+                string loadJSOn = File.ReadAllText(Application.persistentDataPath + "/" + item.lvlID.ToString() + ".json");
+                PlanetsData _planetsData = JsonUtility.FromJson<PlanetsData>(loadJSOn);
+
+                item.isEntered = _planetsData.completed;
+                item.getStar = _planetsData.wonStarCount;
+
+            }
         }
+
     }
 
-    public void Save()
+    public static void Save(int starCount, bool completed, PlanetsEnum levelId)
     {
-        _planetsData = new PlanetsData();
+
+        PlanetsData _planetsData = new PlanetsData(starCount, completed);
         string saveJSon = JsonUtility.ToJson(_planetsData, true);
+
+        File.WriteAllText(Application.persistentDataPath + "/" + levelId.ToString() + ".json", saveJSon);
     }
 
-    public void Load()
-    {
-        string loadJSOn = File.ReadAllText(Application.persistentDataPath + "/Planets.json");
-        _planetsData = JsonUtility.FromJson<PlanetsData>(loadJSOn);
-    }
+
 
     #endregion
 }

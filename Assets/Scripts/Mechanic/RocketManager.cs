@@ -9,14 +9,15 @@ public class RocketManager : MonoBehaviour
 
     [SerializeField] private Camera _cam;
 
-    private int planetIndex = 0;
 
 
     private void Start()
     {
         _cam = Camera.main;
-        GameManager.Instance.planets[planetIndex].GetComponent<SphereCollider>().enabled = true;
+
     }
+
+    //OnComplate ile level aç
 
     private void OnTriggerEnter(Collider other)
     {
@@ -24,20 +25,16 @@ public class RocketManager : MonoBehaviour
         if (planetsComponent != null)
         {
 
+            JSonMangerPlanets.Save(0, true, planetsComponent.lvlID); 
 
-            RotateRocket();
-            MoveCamera();
-            EnablePlanetColliders();
-
-            StartCoroutine(LoadScene(other.gameObject.GetComponent<Planets>().item.ToString(), other.gameObject));//Roketin Gezegen Level'ına girmesi
-            jsonManager.Save();
-
+            GameManager.Instance.UpdatePlanets();
         }
-    }
 
-    private void RotateRocket()
-    {
+        jsonManager.Save();
 
+
+
+        // StartCoroutine(LoadScene(other.gameObject.GetComponent<Planets>().item.ToString(), other.gameObject));
     }
 
     private void MoveCamera()
@@ -45,24 +42,10 @@ public class RocketManager : MonoBehaviour
         _cam.transform.DOMove(new Vector3(_cam.transform.position.x, _cam.transform.position.y + 1.5f, _cam.transform.position.z), 3f);
     }
 
-    private void EnablePlanetColliders()
-    {
-        GameManager.Instance.planets[planetIndex + 1].gameObject.GetComponent<SphereCollider>().enabled = true;
-        planetIndex++;
-
-
-    }
-
-
-
-
     IEnumerator LoadScene(string levelName, GameObject currentLevel)
     {
-
         currentLevel.GetComponent<SphereCollider>().enabled = false;
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(levelName);
-
     }
-
 }

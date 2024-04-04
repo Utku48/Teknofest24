@@ -41,7 +41,7 @@ public class JSonManagerRocket : MonoBehaviour
         // Load edilen konumu ve rotasyonu roket pozisyonuna ve rotasyonuna atayalım
         _rocket.transform.position = _rocketData._lastRocketPos;
         _rocket.transform.rotation = Quaternion.Euler(_rocketData._lastRocketRot); // Quaternion'u yeniden oluştururken Euler açılarını kullanıyoruz.
-    
+       
 
         Debug.Log("Veriler Yüklendi");
     }

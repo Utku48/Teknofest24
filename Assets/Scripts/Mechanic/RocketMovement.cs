@@ -39,8 +39,12 @@ public class RocketMovement : MonoBehaviour
 
     public void GoPlanet(Vector3 _planetPos)
     {
+    
+       //Sequence ile yap
+        _rocket.transform.DOMove(_planetPos, 1f).OnComplete(() =>
+        {
 
-        _rocket.transform.DOMove(_planetPos, 1f);
+        });
     }
 
 

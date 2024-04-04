@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
-    public List<GameObject> planets = new List<GameObject>();
+    public List<Planets> planets = new List<Planets>();
 
 
     public static GameManager Instance { get; private set; }
@@ -23,8 +23,25 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        UpdatePlanets();
+    }
+
     public void CharacterSelectionScreen()
     {
         SceneManager.LoadScene(1);
+    }
+
+    public void UpdatePlanets()
+    {
+        GetComponent<JSonMangerPlanets>().LoadPlanetsData();
+        for (int i = 1; i < planets.Count; i++)
+        {
+            if (planets[i - 1].isEntered)
+            {
+                planets[i].GetComponent<SphereCollider>().enabled = true;
+            }
+        }
     }
 }

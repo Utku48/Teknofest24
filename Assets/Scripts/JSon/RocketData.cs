@@ -7,7 +7,8 @@ public class RocketData
 {
     public Vector3 _lastRocketPos;
     public Vector3 _lastRocketRot;
-  
+
+
     public RocketData()
     {
 
@@ -17,6 +18,6 @@ public class RocketData
     {
         this._lastRocketPos = lastRocketPos;
         this._lastRocketRot = lastRocketRot.eulerAngles;
-  
+     
     }
 }

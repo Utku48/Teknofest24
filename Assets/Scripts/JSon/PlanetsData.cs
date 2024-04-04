@@ -7,20 +7,12 @@ using UnityEngine;
 [System.Serializable]
 public class PlanetsData
 {
-    public List<GameObject> JPlanets = new List<GameObject>();
+    public int wonStarCount = 0;
+    public bool completed = false;
 
-    public GameObject isActive;
-  
-    public PlanetsData()
+    public PlanetsData(int wonStarCount, bool completed)
     {
-
-
+        this.wonStarCount = wonStarCount;
+        this.completed = completed;
     }
-    public PlanetsData(GameObject isActive)
-    {
-        this.isActive = isActive;
-
-    }
-
-
 }

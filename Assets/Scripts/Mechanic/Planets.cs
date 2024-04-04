@@ -1,11 +1,13 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 
 public class Planets : MonoBehaviour
 {
 
-    [SerializeField] public PlanetsEnum item;
-
+    [SerializeField] public PlanetsEnum lvlID;
+    public bool isEntered = false;
+    public int getStar = 0;
+    //Gezegene girilip girilmediği
     public enum PlanetsEnum
     {
         Lvl1,
@@ -21,7 +23,7 @@ public class Planets : MonoBehaviour
 
     public PlanetsEnum Planet()
     {
-        return item;
+        return lvlID;
     }
 
 }
