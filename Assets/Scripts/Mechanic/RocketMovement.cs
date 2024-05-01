@@ -1,16 +1,17 @@
 ﻿using DG.Tweening;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class RocketMovement : MonoBehaviour
 {
     [SerializeField] private GameObject _rocket;
-    [SerializeField] private Transform _target;
-    public bool rotate = true;
 
 
- 
+    public JSonManagerRocket jSonManagerRocket;
+
+
 
     private void Update()
     {
@@ -23,29 +24,60 @@ public class RocketMovement : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                GameObject _hitPlanet = hit.collider.gameObject;
 
-                if (_hitPlanet.GetComponent<Planets>())
+                if (hit.collider.gameObject.GetComponent<Planets>())
                 {
-                    rotate = !rotate;
-                    GoPlanet(_hitPlanet.transform.position);
+
+                    GameObject _hitPlanet = hit.collider.gameObject.transform.GetChild(0).gameObject;
+
+                    Planets planetsComponent = hit.collider.gameObject.GetComponent<Planets>();
+
+                    hit.collider.gameObject.GetComponent<Planets>().isEntered = true;
+
+                    GoPlanet(_hitPlanet.transform.position,
+                        _hitPlanet.transform.rotation,
+                        hit.collider.gameObject.GetComponent<Planets>().lvlID.ToString(),
+                     hit.collider.gameObject.GetComponent<Planets>().isEntered,
+                     planetsComponent
+
+                        );
+
 
                 }
-
             }
         }
     }
 
 
-    public void GoPlanet(Vector3 _planetPos)
+    public void GoPlanet(Vector3 _childPos, Quaternion _childRot, string lvlName, bool isEntered, Planets planetsComponent)
     {
-    
-       //Sequence ile yap
-        _rocket.transform.DOMove(_planetPos, 1f).OnComplete(() =>
-        {
+        // Sequence ile yap
 
-        });
+        _rocket.transform.DOMove(_childPos, 1f).SetEase(Ease.Linear);
+        _rocket.transform.DORotate(_childRot.eulerAngles, 1.5f)
+            .OnComplete(() =>
+            {
+
+                jSonManagerRocket.Save();
+                //SceneManager.LoadScene(lvlName);
+
+                if (planetsComponent != null)
+                {
+                    JSonMangerPlanets.Save(5, isEntered, planetsComponent.lvlID);
+                }
+                else
+                {
+                    Debug.LogError("Planets component is null!");
+                }
+            });
+
+        GameManager.Instance.UpdatePlanets();
     }
+
+
+
+
+
 
 
 }

@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.IO;
 
+//C:\Users\utku2\AppData\LocalLow\DefaultCompany\Teknofest-24
 
 public class JSonManagerRocket : MonoBehaviour
 {

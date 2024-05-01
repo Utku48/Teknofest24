@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         UpdatePlanets();
+       
     }
 
     public void CharacterSelectionScreen()
@@ -36,6 +37,7 @@ public class GameManager : MonoBehaviour
     public void UpdatePlanets()
     {
         GetComponent<JSonMangerPlanets>().LoadPlanetsData();
+
         for (int i = 1; i < planets.Count; i++)
         {
             if (planets[i - 1].isEntered)

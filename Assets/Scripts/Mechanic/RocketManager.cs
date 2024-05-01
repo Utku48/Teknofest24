@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class RocketManager : MonoBehaviour
 {
-    public JSonManagerRocket jsonManager;
+
 
     [SerializeField] private Camera _cam;
 
@@ -25,16 +25,10 @@ public class RocketManager : MonoBehaviour
         if (planetsComponent != null)
         {
 
-            JSonMangerPlanets.Save(0, true, planetsComponent.lvlID); 
+            JSonMangerPlanets.Save(0, true, planetsComponent.lvlID);
 
             GameManager.Instance.UpdatePlanets();
         }
-
-        jsonManager.Save();
-
-
-
-        // StartCoroutine(LoadScene(other.gameObject.GetComponent<Planets>().item.ToString(), other.gameObject));
     }
 
     private void MoveCamera()
@@ -42,10 +36,5 @@ public class RocketManager : MonoBehaviour
         _cam.transform.DOMove(new Vector3(_cam.transform.position.x, _cam.transform.position.y + 1.5f, _cam.transform.position.z), 3f);
     }
 
-    IEnumerator LoadScene(string levelName, GameObject currentLevel)
-    {
-        currentLevel.GetComponent<SphereCollider>().enabled = false;
-        yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene(levelName);
-    }
+
 }

@@ -32,13 +32,14 @@ public class JSonMangerPlanets : MonoBehaviour
 
     }
 
-    public static void Save(int starCount, bool completed, PlanetsEnum levelId)
+    public static void Save(int winnedStarCount, bool completed, PlanetsEnum levelId)
     {
 
-        PlanetsData _planetsData = new PlanetsData(starCount, completed);
+        PlanetsData _planetsData = new PlanetsData(winnedStarCount, completed);
         string saveJSon = JsonUtility.ToJson(_planetsData, true);
 
         File.WriteAllText(Application.persistentDataPath + "/" + levelId.ToString() + ".json", saveJSon);
+        File.WriteAllText(Application.persistentDataPath, saveJSon);
     }
 
 
