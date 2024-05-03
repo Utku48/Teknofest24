@@ -39,10 +39,9 @@ public class JSonManagerRocket : MonoBehaviour
         string loadJson = File.ReadAllText(Application.persistentDataPath + "/RocketData.json");
         _rocketData = JsonUtility.FromJson<RocketData>(loadJson);
 
-        // Load edilen konumu ve rotasyonu roket pozisyonuna ve rotasyonuna atayalım
+  
         _rocket.transform.position = _rocketData._lastRocketPos;
-        _rocket.transform.rotation = Quaternion.Euler(_rocketData._lastRocketRot); // Quaternion'u yeniden oluştururken Euler açılarını kullanıyoruz.
-       
+        _rocket.transform.rotation = Quaternion.Euler(_rocketData._lastRocketRot); 
 
         Debug.Log("Veriler Yüklendi");
     }

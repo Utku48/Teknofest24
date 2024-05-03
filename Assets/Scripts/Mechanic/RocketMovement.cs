@@ -32,12 +32,11 @@ public class RocketMovement : MonoBehaviour
 
                     Planets planetsComponent = hit.collider.gameObject.GetComponent<Planets>();
 
-                    hit.collider.gameObject.GetComponent<Planets>().isEntered = true;
 
                     GoPlanet(_hitPlanet.transform.position,
                         _hitPlanet.transform.rotation,
                         hit.collider.gameObject.GetComponent<Planets>().lvlID.ToString(),
-                     hit.collider.gameObject.GetComponent<Planets>().isEntered,
+
                      planetsComponent
 
                         );
@@ -49,7 +48,7 @@ public class RocketMovement : MonoBehaviour
     }
 
 
-    public void GoPlanet(Vector3 _childPos, Quaternion _childRot, string lvlName, bool isEntered, Planets planetsComponent)
+    public void GoPlanet(Vector3 _childPos, Quaternion _childRot, string lvlName, Planets planetsComponent)
     {
         // Sequence ile yap
 
@@ -59,16 +58,16 @@ public class RocketMovement : MonoBehaviour
             {
 
                 jSonManagerRocket.Save();
-                //SceneManager.LoadScene(lvlName);
 
                 if (planetsComponent != null)
                 {
-                    JSonMangerPlanets.Save(5, isEntered, planetsComponent.lvlID);
+
                 }
                 else
                 {
                     Debug.LogError("Planets component is null!");
                 }
+                SceneManager.LoadScene(lvlName);
             });
 
         GameManager.Instance.UpdatePlanets();

@@ -24,8 +24,7 @@ public class RocketManager : MonoBehaviour
         Planets planetsComponent = other.gameObject.GetComponent<Planets>();
         if (planetsComponent != null)
         {
-
-            JSonMangerPlanets.Save(0, true, planetsComponent.lvlID);
+            
 
             GameManager.Instance.UpdatePlanets();
         }

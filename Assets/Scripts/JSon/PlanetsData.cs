@@ -8,11 +8,13 @@ using UnityEngine;
 public class PlanetsData
 {
     public int wonStarCount = 0;
-    public bool completed = false;
+    public int earnedStar = 0;
 
-    public PlanetsData(int wonStarCount, bool completed)
+    public PlanetsData(int wonStarCount, int earnedStar)
     {
         this.wonStarCount = wonStarCount;
-        this.completed = completed;
+        this.earnedStar = earnedStar;
     }
+
+
 }

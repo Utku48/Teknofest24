@@ -7,9 +7,10 @@ using static UnityEditor.Progress;
 
 public class JSonMangerPlanets : MonoBehaviour
 {
+    public PlanetsData _planetsData;
+    public static int dataBaseScore;
 
-
-    private void Awake()
+    private void Start()
     {
         LoadPlanetsData();
     }
@@ -22,24 +23,27 @@ public class JSonMangerPlanets : MonoBehaviour
             if (File.Exists(Application.persistentDataPath + "/" + item.lvlID.ToString() + ".json"))
             {
                 string loadJSOn = File.ReadAllText(Application.persistentDataPath + "/" + item.lvlID.ToString() + ".json");
-                PlanetsData _planetsData = JsonUtility.FromJson<PlanetsData>(loadJSOn);
+                _planetsData = JsonUtility.FromJson<PlanetsData>(loadJSOn);
 
-                item.isEntered = _planetsData.completed;
-                item.getStar = _planetsData.wonStarCount;
+
+                item.gotStar = _planetsData.wonStarCount;
+                dataBaseScore = item.gotStar;
 
             }
         }
 
     }
 
-    public static void Save(int winnedStarCount, bool completed, PlanetsEnum levelId)
+    public void Save(int winnedStarCount, string levelId, int earnedStar)
     {
 
-        PlanetsData _planetsData = new PlanetsData(winnedStarCount, completed);
+        _planetsData = new PlanetsData(winnedStarCount, earnedStar);
         string saveJSon = JsonUtility.ToJson(_planetsData, true);
 
         File.WriteAllText(Application.persistentDataPath + "/" + levelId.ToString() + ".json", saveJSon);
         File.WriteAllText(Application.persistentDataPath, saveJSon);
+
+
     }
 
 

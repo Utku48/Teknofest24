@@ -26,9 +26,9 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         UpdatePlanets();
-       
-    }
 
+    }
+   
     public void CharacterSelectionScreen()
     {
         SceneManager.LoadScene(1);
