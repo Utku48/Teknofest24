@@ -258,6 +258,79 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 15529483}
   m_CullTransparentMesh: 1
+--- !u!1 &224471582
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 224471583}
+  - component: {fileID: 224471584}
+  m_Layer: 0
+  m_Name: QuizManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &224471583
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224471582}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1035.1366, y: 2376.2246, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &224471584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224471582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adca0dbf86418fe46ab33b61c9578b0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  QnA:
+  - Question: Name of the Channel ?
+    Answers:
+    - Utk Game
+    - Brackeys
+    - The Game
+    - Gamerator
+    correctAnswers: 0
+  - Question: when is mty birthday
+    Answers:
+    - 5 jan
+    - 7 june
+    - 6 May
+    - 1 nov
+    correctAnswers: 2
+  - Question: where is the Ankara city
+    Answers:
+    - Belgium
+    - Turkey
+    - Canada
+    - The UK
+    correctAnswers: 1
+  options:
+  - {fileID: 1659536172}
+  - {fileID: 1757706750}
+  - {fileID: 1300794284}
+  - {fileID: 1556169044}
+  currentQuestion: 0
+  QuesionTxt: {fileID: 375629351}
 --- !u!1 &225508605
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,7 +641,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.16700001, y: 0.952}
   m_AnchorMax: {x: 0.16700001, y: 0.952}
-  m_AnchoredPosition: {x: -233.08957, y: 22}
+  m_AnchoredPosition: {x: -233.08957, y: 0}
   m_SizeDelta: {x: 172.9484, y: 30}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &415829995
@@ -1575,6 +1648,7 @@ GameObject:
   - component: {fileID: 1300794287}
   - component: {fileID: 1300794286}
   - component: {fileID: 1300794289}
+  - component: {fileID: 1300794290}
   m_Layer: 5
   m_Name: Option3
   m_TagString: Untagged
@@ -1646,7 +1720,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1300794287}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1300794290}
+        m_TargetAssemblyTypeName: AnswerScript, Assembly-CSharp
+        m_MethodName: Answer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1300794287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1700,6 +1786,20 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.31764707}
   m_EffectDistance: {x: 10, y: -10}
   m_UseGraphicAlpha: 1
+--- !u!114 &1300794290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300794284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 403c5bcc859539041812d5e4eb7f5068, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCorrect: 0
+  quizManager: {fileID: 224471584}
 --- !u!1 &1556169044
 GameObject:
   m_ObjectHideFlags: 0
@@ -1713,6 +1813,7 @@ GameObject:
   - component: {fileID: 1556169047}
   - component: {fileID: 1556169046}
   - component: {fileID: 1556169049}
+  - component: {fileID: 1556169050}
   m_Layer: 5
   m_Name: Option4
   m_TagString: Untagged
@@ -1784,7 +1885,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1556169047}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1556169050}
+        m_TargetAssemblyTypeName: AnswerScript, Assembly-CSharp
+        m_MethodName: Answer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1556169047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1838,6 +1951,20 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.31764707}
   m_EffectDistance: {x: 10, y: -10}
   m_UseGraphicAlpha: 1
+--- !u!114 &1556169050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556169044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 403c5bcc859539041812d5e4eb7f5068, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCorrect: 0
+  quizManager: {fileID: 224471584}
 --- !u!1 &1562588830
 GameObject:
   m_ObjectHideFlags: 0
@@ -2079,6 +2206,7 @@ GameObject:
   - component: {fileID: 1659536175}
   - component: {fileID: 1659536174}
   - component: {fileID: 1659536177}
+  - component: {fileID: 1659536178}
   m_Layer: 5
   m_Name: Option1
   m_TagString: Untagged
@@ -2150,7 +2278,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1659536175}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1659536178}
+        m_TargetAssemblyTypeName: AnswerScript, Assembly-CSharp
+        m_MethodName: Answer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1659536175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2204,6 +2344,20 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.31764707}
   m_EffectDistance: {x: 10, y: -10}
   m_UseGraphicAlpha: 1
+--- !u!114 &1659536178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659536172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 403c5bcc859539041812d5e4eb7f5068, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCorrect: 0
+  quizManager: {fileID: 224471584}
 --- !u!1 &1757706750
 GameObject:
   m_ObjectHideFlags: 0
@@ -2217,6 +2371,7 @@ GameObject:
   - component: {fileID: 1757706753}
   - component: {fileID: 1757706752}
   - component: {fileID: 1757706755}
+  - component: {fileID: 1757706756}
   m_Layer: 5
   m_Name: Option2
   m_TagString: Untagged
@@ -2288,7 +2443,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1757706753}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1757706756}
+        m_TargetAssemblyTypeName: AnswerScript, Assembly-CSharp
+        m_MethodName: Answer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1757706753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2342,6 +2509,20 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.31764707}
   m_EffectDistance: {x: 10, y: -10}
   m_UseGraphicAlpha: 1
+--- !u!114 &1757706756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757706750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 403c5bcc859539041812d5e4eb7f5068, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCorrect: 0
+  quizManager: {fileID: 224471584}
 --- !u!1 &1787860963
 GameObject:
   m_ObjectHideFlags: 0
