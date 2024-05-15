@@ -1,6 +1,4 @@
-﻿using System;
-using System.IO;
-using Unity.VisualScripting;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,8 +7,9 @@ using UnityEngine.SceneManagement;
 public class Lvl1ScoreController : MonoBehaviour
 {
 
-
+    public TextMeshProUGUI earnedText;
     public JSonMangerPlanets jSonMangerPlanets;
+    [SerializeField] private GameObject _riddlePanel;
 
     public int score;
     string sahneAdi;
@@ -36,9 +35,14 @@ public class Lvl1ScoreController : MonoBehaviour
 
     public void increaseScore()
     {
-        score++;
-        CheckStar();
-        jSonMangerPlanets.Save(score, sahneAdi, earned); ;
+        if (score < 3)
+        {
+            score++;
+            CheckStar();
+            jSonMangerPlanets.Save(score, sahneAdi, earned);
+        }
+        else Debug.Log("Score 3'ü geçti");
+
 
     }
 
@@ -65,6 +69,11 @@ public class Lvl1ScoreController : MonoBehaviour
             Debug.Log("Alacagını Almıs");
         }
     }
+    private void Update()
+    {
+        earnedText.text = "Kazanılan yıldız: " + jSonMangerPlanets._planetsData.earnedStar.ToString();
+    }
+
 }
 
 

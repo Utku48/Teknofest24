@@ -1,15 +1,17 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
 using TMPro;
+using UnityEditor.iOS;
 using UnityEngine;
 
 
 
 public class QuizManager : MonoBehaviour
 {
-    public List<QuestionsAndAnswers> QnA;
+    public List<QuestionsAndAnswers> QuestionAnswerList;
     public GameObject[] options;
-    public int currentQuestion;
+    public int currentQuestionID;
+    public Lvl1ScoreController scoreController;
 
     public TextMeshProUGUI QuesionTxt;
 
@@ -18,12 +20,12 @@ public class QuizManager : MonoBehaviour
         generateQuestion();
     }
 
-
-    public void correct()
+    private void Update()
     {
-        QnA.RemoveAt(currentQuestion);
-        generateQuestion();
+        print("CurrentQID: " + currentQuestionID);
     }
+
+ 
 
 
     private void SetAnswer()
@@ -31,30 +33,32 @@ public class QuizManager : MonoBehaviour
         for (int i = 0; i < options.Length; i++)
         {
             options[i].GetComponent<AnswerScript>().isCorrect = false;
-            options[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = QnA[currentQuestion].Answers[i];
+            options[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = QuestionAnswerList[currentQuestionID].Answers[i]; //Şıklara,şıkların üzerinde yazacak olan seçenekleri atıyoruz.
 
-            if (QnA[currentQuestion].correctAnswers == i + 1)
+            if (QuestionAnswerList[currentQuestionID].correctAnswersID == i + 1)
             {
                 options[i].GetComponent<AnswerScript>().isCorrect = true;
+                
             }
         }
     }
 
     public void generateQuestion()
     {
-        if (QnA.Count == 0)
+        if (QuestionAnswerList.Count == 0)
         {
-            
+
             return;
         }
 
-        currentQuestion = Random.Range(0, QnA.Count);
+        currentQuestionID = 0;
 
-        QuesionTxt.text = QnA[currentQuestion].Question;
+        QuesionTxt.text = QuestionAnswerList[currentQuestionID].Question;
         SetAnswer();
+        QuestionAnswerList.RemoveAt(currentQuestionID);
 
-        QnA.RemoveAt(currentQuestion);
+        currentQuestionID++;
     }
 
-
+    //10 tane soru getir. 7 tane bilirse 3 yıldız ve ve gönder
 }
