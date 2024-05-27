@@ -222,6 +222,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e0ea19a1d371464dbea6b80112dbfba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  earnedText: {fileID: 0}
+  jSonMangerPlanets: {fileID: 0}
+  _riddlePanel: {fileID: 0}
+  score: 0
+  earned: 0
 --- !u!1 &90821442
 GameObject:
   m_ObjectHideFlags: 0

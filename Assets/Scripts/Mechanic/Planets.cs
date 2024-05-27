@@ -6,6 +6,7 @@ public class Planets : MonoBehaviour
 {
 
     [SerializeField] public PlanetsEnum lvlID;
+    public GameObject _rocketPos;
 
     public bool isEntered;
     public int gotStar = 0;

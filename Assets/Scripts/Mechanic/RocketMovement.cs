@@ -28,7 +28,7 @@ public class RocketMovement : MonoBehaviour
                 if (hit.collider.gameObject.GetComponent<Planets>())
                 {
 
-                    GameObject _hitPlanet = hit.collider.gameObject.transform.GetChild(0).gameObject;
+                    GameObject _hitPlanet = hit.collider.GetComponent<Planets>()._rocketPos;
 
                     Planets planetsComponent = hit.collider.gameObject.GetComponent<Planets>();
 
@@ -56,7 +56,7 @@ public class RocketMovement : MonoBehaviour
         _rocket.transform.DORotate(_childRot.eulerAngles, 1.5f)
             .OnComplete(() =>
             {
-
+                
                 jSonManagerRocket.Save();
 
                 if (planetsComponent != null)

@@ -8,6 +8,7 @@ public class Lvl1ScoreController : MonoBehaviour
 {
 
     public TextMeshProUGUI earnedText;
+    public TextMeshProUGUI answeredAllQText;
     public JSonMangerPlanets jSonMangerPlanets;
     [SerializeField] private GameObject _riddlePanel;
 
@@ -26,11 +27,7 @@ public class Lvl1ScoreController : MonoBehaviour
 
     }
 
-    public void LevelSelectionScreen()
-    {
-        SceneManager.LoadScene(2);
-        StarManager.Instance.jSonManagerStar.Save();
-    }
+   
 
 
     public void increaseScore()
@@ -72,6 +69,7 @@ public class Lvl1ScoreController : MonoBehaviour
     private void Update()
     {
         earnedText.text = "Kazanılan yıldız: " + jSonMangerPlanets._planetsData.earnedStar.ToString();
+        answeredAllQText.text = ("Tüm soruları cevapladın. Bu seviyede kazanılan yıldız sayısı: " + earned + "");
     }
 
 }
