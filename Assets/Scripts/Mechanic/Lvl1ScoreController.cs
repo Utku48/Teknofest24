@@ -19,15 +19,15 @@ public class Lvl1ScoreController : MonoBehaviour
 
     private void Start()
     {
-
-        jSonMangerPlanets.LoadPlanetsData();
+        earnedText.text = "" + jSonMangerPlanets._planetsData.earnedStar.ToString();
+        //jSonMangerPlanets.LoadPlanetsData();
         sahneAdi = SceneManager.GetActiveScene().name;
         score = JSonMangerPlanets.dataBaseScore;
         earned = score;
 
     }
 
-   
+
 
 
     public void increaseScore()
@@ -49,6 +49,7 @@ public class Lvl1ScoreController : MonoBehaviour
         {
             StarManager.Instance.star += (score - earned);
             earned = 1;
+            Debug.Log("KAZANIYORELEMAN");
         }
         else if (score == 2)
         {
@@ -68,7 +69,7 @@ public class Lvl1ScoreController : MonoBehaviour
     }
     private void Update()
     {
-        earnedText.text = "Kazanılan yıldız: " + jSonMangerPlanets._planetsData.earnedStar.ToString();
+        earnedText.text = "" + earned;
         answeredAllQText.text = ("Tüm soruları cevapladın. Bu seviyede kazanılan yıldız sayısı: " + earned + "");
     }
 

@@ -1,47 +1,41 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
-using System.Xml.Schema;
+// Type Writer Script, Author : witnn .
 
-public class WobblyText : MonoBehaviour
+[RequireComponent(typeof(AudioSource))]
+public class TypeWriter : MonoBehaviour
 {
-    public TMP_Text _greetingText;
+    public float delay = 0.1f;
+    public AudioClip TypeSound;
+    [Multiline]
+    public string yazi;
 
 
 
-    void Update()
+    AudioSource audSrc;
+    TextMeshProUGUI thisText;
+
+    private void Start()
     {
-        _greetingText.ForceMeshUpdate();
-        var textInfo = _greetingText.textInfo;
+        audSrc = GetComponent<AudioSource>();
+        thisText = GetComponent<TextMeshProUGUI>();
 
-        for (int i = 0; i < textInfo.characterCount; i++)
+        StartCoroutine(TypeWrite());
+    }
+
+    IEnumerator TypeWrite()
+    {
+        foreach (char i in yazi)
         {
-            var charInfo = textInfo.characterInfo[i];
+            thisText.text += i.ToString();
 
-            if (!charInfo.isVisible)
-            {
-                continue;
-            }
+            audSrc.pitch = Random.Range(0.8f, 1.2f);
+            audSrc.PlayOneShot(TypeSound);
 
-            var verts = textInfo.meshInfo[charInfo.materialReferenceIndex].vertices;
-
-            for (int j = 0; j < 4; j++)
-            {
-                var orig = verts[charInfo.vertexIndex + j];
-                verts[charInfo.vertexIndex + j] = orig + new Vector3(0, Mathf.Sin(Time.time * 2f + orig.x * 0.01f) * 10f, 0);
-            }
-
+            if (i.ToString() == ".") { yield return new WaitForSeconds(1); }
+            else { yield return new WaitForSeconds(delay); }
         }
-
-        for (int i = 0; i < textInfo.meshInfo.Length; i++)
-        {
-            var meshInfo = textInfo.meshInfo[i];
-            meshInfo.mesh.vertices = meshInfo.vertices;
-            _greetingText.UpdateGeometry(meshInfo.mesh, i);
-        }
-
-
-
     }
 }

@@ -26,9 +26,13 @@ public class AnswerScript : MonoBehaviour
 
             Debug.Log("CorrectAnswer");
 
+            quizManager.QuestionAnswerList.RemoveAt(quizManager.currentQuestionID);
+            quizManager.generateQuestion();
+
+
             lvl1ScoreController.increaseScore();
 
-            StartCoroutine(greenButton());
+
 
         }
         else
@@ -49,17 +53,4 @@ public class AnswerScript : MonoBehaviour
 
     }
 
-
-    IEnumerator greenButton()
-    {
-        Debug.Log("corotouniess");
-        _clickedButton.GetComponent<Image>().color = Color.green;
-        Destroy(this.gameObject);
-        yield return new WaitForSeconds(.75f);
-
-        quizManager.QuestionAnswerList.RemoveAt(quizManager.currentQuestionID);
-        quizManager.generateQuestion();
-
-
-    }
 }
