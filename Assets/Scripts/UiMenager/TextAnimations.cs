@@ -22,10 +22,10 @@ public class TypeWriter : MonoBehaviour
         audSrc = GetComponent<AudioSource>();
         thisText = GetComponent<TextMeshProUGUI>();
 
-        StartCoroutine(TypeWrite());
+        StartCoroutine(SecondTypeWrite());
     }
 
-    IEnumerator TypeWrite()
+    IEnumerator SecondTypeWrite()
     {
         foreach (char i in yazi)
         {
