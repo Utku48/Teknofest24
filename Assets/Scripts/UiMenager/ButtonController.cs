@@ -9,35 +9,45 @@ public class ButtonController : MonoBehaviour
 {
     #region UiPanels
     public GameObject _riddlePanel;
+
     public Button startButton;
     public Button continueButton;
     public Image startMessageImage;
+    public Image continueMessageImage;
 
     public GameObject _answeredAllQ;
+
     #endregion
 
 
-    public GameObject _bedevi;
-    public GameObject _bedeviGoPos;
+    public GameObject astourant;
+    public GameObject _astGoPos;
     public GameObject[] QuestionNanswers;
 
-    private Animator _bedeviAnim;
+    public Animator _astAnim;
 
 
     private void Start()
     {
-        _bedeviAnim = _bedevi.GetComponent<Animator>();
+        _astAnim = astourant.GetComponent<Animator>();
     }
 
     public void OnContinueButton()
     {
-        _bedeviAnim.SetBool("isWalking", true);
+        _astAnim.SetBool("isWalking", true);
         startButton.gameObject.SetActive(true);
         continueButton.gameObject.SetActive(false);
         startMessageImage.gameObject.SetActive(false);
 
-        _bedevi.transform.DOMove(_bedeviGoPos.transform.position, 2f).OnComplete(() => _bedeviAnim.SetBool("isWalking", false));
 
+
+
+
+        astourant.transform.DOMove(_astGoPos.transform.position, 2f).OnComplete(() =>
+        {
+            _astAnim.SetBool("isWalking", false);
+            continueMessageImage.gameObject.SetActive(true);
+        });
 
 
     }
@@ -46,7 +56,8 @@ public class ButtonController : MonoBehaviour
     {
         _riddlePanel.SetActive(true);
         StartCoroutine(ActivateQuestionNanswers());
-        _bedevi.SetActive(false);
+        astourant.SetActive(false);
+        continueMessageImage.gameObject.SetActive(false);
     }
 
     IEnumerator ActivateQuestionNanswers()
@@ -71,8 +82,5 @@ public class ButtonController : MonoBehaviour
         StarManager.Instance.jSonManagerStar.Save();
     }
 
-    private void Update()
-    {
 
-    }
 }

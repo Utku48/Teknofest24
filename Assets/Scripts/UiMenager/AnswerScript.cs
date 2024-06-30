@@ -8,6 +8,7 @@ public class AnswerScript : MonoBehaviour
 {
     public bool isCorrect = false;
     public QuizManager quizManager;
+ 
     public Lvl1ScoreController lvl1ScoreController;
 
     public GameObject _clickedButton;
@@ -29,10 +30,8 @@ public class AnswerScript : MonoBehaviour
             quizManager.QuestionAnswerList.RemoveAt(quizManager.currentQuestionID);
             quizManager.generateQuestion();
 
-
             lvl1ScoreController.increaseScore();
-
-
+          
 
         }
         else
