@@ -2,6 +2,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class QuizManager : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class QuizManager : MonoBehaviour
 
     public TextMeshProUGUI QuesionTxt;
     public GameObject _answeredAllQPanel;
-
+    public GameObject repeatButton;
     public int sayac;
     public int QlistCount;
 
@@ -56,11 +57,15 @@ public class QuizManager : MonoBehaviour
         }
         else
         {
+            questionListData.QuestionAnswerList = QuestionAnswerList;
+            questionListData.SaveQuestionsToJson();
+
             _answeredAllQPanel.SetActive(true);
         }
 
         if (QuestionAnswerList.Count == 0)
         {
+            repeatButton.SetActive(false);
             return;
         }
 
