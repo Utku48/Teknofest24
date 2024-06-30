@@ -1,15 +1,11 @@
 ﻿using System.Collections.Generic;
-using System.Diagnostics;
 using TMPro;
-using UnityEditor.iOS;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
-
 public class QuizManager : MonoBehaviour
 {
-    public List<QuestionsAndAnswers> QuestionAnswerList;
+    public QuestionListData questionListData;
     public GameObject[] options;
     public int currentQuestionID;
     public Lvl1ScoreController scoreController;
@@ -19,8 +15,11 @@ public class QuizManager : MonoBehaviour
 
     public int sayac;
     public int QlistCount;
+
     private void Start()
     {
+        questionListData.LoadQuestionsFromJson();
+        QuestionAnswerList = questionListData.QuestionAnswerList;
         QlistCount = QuestionAnswerList.Count;
         generateQuestion();
         sayac--;
@@ -30,9 +29,6 @@ public class QuizManager : MonoBehaviour
     {
         print("CurrentQID: " + currentQuestionID);
     }
-
-
-
 
     private void SetAnswer()
     {
@@ -47,6 +43,9 @@ public class QuizManager : MonoBehaviour
 
             }
         }
+
+        questionListData.QuestionAnswerList = QuestionAnswerList;
+        questionListData.SaveQuestionsToJson();
     }
 
     public void generateQuestion()
@@ -60,19 +59,26 @@ public class QuizManager : MonoBehaviour
             _answeredAllQPanel.SetActive(true);
         }
 
-
         if (QuestionAnswerList.Count == 0)
         {
             return;
         }
 
-
         QuesionTxt.text = QuestionAnswerList[currentQuestionID].Question;
         SetAnswer();
-
     }
 
+    public void OnSaveButtonClicked()
+    {
+        questionListData.SaveQuestionsToJson();
+    }
 
+    public void OnLoadButtonClicked()
+    {
+        questionListData.LoadQuestionsFromJson();
+        QuestionAnswerList = questionListData.QuestionAnswerList;
+        QlistCount = QuestionAnswerList.Count;
+    }
 
-    //10 tane soru getir. 7 tane bilirse 3 yıldız ve ve gönder
+    public List<QuestionsAndAnswers> QuestionAnswerList;
 }
