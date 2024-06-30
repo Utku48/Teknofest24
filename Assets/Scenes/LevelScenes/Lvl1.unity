@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adca0dbf86418fe46ab33b61c9578b0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questionListData: {fileID: 0}
+  questionListData: {fileID: 1815896801}
   options:
   - {fileID: 1659536172}
   - {fileID: 1757706750}
@@ -208,6 +208,7 @@ MonoBehaviour:
   scoreController: {fileID: 1815896796}
   QuesionTxt: {fileID: 375629351}
   _answeredAllQPanel: {fileID: 1988462392}
+  repeatButton: {fileID: 843975337}
   sayac: 0
   QlistCount: 0
   QuestionAnswerList:
@@ -3886,6 +3887,7 @@ GameObject:
   - component: {fileID: 1815896798}
   - component: {fileID: 1815896799}
   - component: {fileID: 1815896800}
+  - component: {fileID: 1815896801}
   m_Layer: 0
   m_Name: Level1Manager
   m_TagString: Untagged
@@ -3958,7 +3960,6 @@ MonoBehaviour:
   continueButton: {fileID: 626104487}
   startMessageImage: {fileID: 812528954}
   continueMessageImage: {fileID: 1859214765}
-  _answeredAllQ: {fileID: 1988462392}
   astourant: {fileID: 919132147486480234}
   _astGoPos: {fileID: 174725522}
   QuestionNanswers:
@@ -3967,7 +3968,7 @@ MonoBehaviour:
   - {fileID: 1757706750}
   - {fileID: 1300794284}
   - {fileID: 1556169044}
-  _astAnim: {fileID: 0}
+  _astAnim: {fileID: 5866666020359329706}
 --- !u!114 &1815896800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3982,6 +3983,64 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   starData:
     JstarCount: 0
+--- !u!114 &1815896801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815896795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adc8eb35edf369845a5a379fc5b9f70d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  QuestionAnswerList:
+  - Question: "Bir volkan gibiyimdir, Bazen sessizimdir bazen g\xFCr\xFClt\xFCl\xFC,
+      Bazen kontrol alt\u0131na al\u0131nabilirim Bazen de lavlar\u0131m\u0131 d\u0131\u015Far\u0131
+      p\xFCsk\xFCrt\xFCr\xFCm S\xF6yler misin ben hangi duyguyum ? "
+    Answers:
+    - "\xD6fke"
+    - "Mutluluk\_"
+    - "H\xFCz\xFCn"
+    - Heyecan
+    correctAnswersID: 1
+  - Question: "Bir kelebek gibiyimdir, Sana \xF6zg\xFCr hissettiririm, Yerde ve havada
+      dans edersin, \u0130nsanlara g\xFCzel s\xF6zler s\xF6ylersin. S\xF6yler misin
+      ben hangi duyguyum ? "
+    Answers:
+    - Korku
+    - "\u015Ea\u015Fk\u0131nl\u0131k\_"
+    - "Ne\u015Fe"
+    - "H\xFCz\xFCn"
+    correctAnswersID: 3
+  - Question: "Karanl\u0131k bir ma\u011Fara gibiyim, Etraf\u0131n\u0131 sarar\u0131m,
+      \xC7ok az hareket etmeni sa\u011Flar\u0131m, Ellerini titretebilirim S\xF6yler
+      misin ben hangi duyguyum ? "
+    Answers:
+    - "H\xFCz\xFCn"
+    - "\u015Ea\u015Fk\u0131nl\u0131k\_"
+    - "Ne\u015Fe"
+    - Korku
+    correctAnswersID: 4
+  - Question: " Iss\u0131z bir \xE7\xF6l gibiyim, Seni rahats\u0131z ederim, Beni
+      hissetti\u011Finde, Sevdi\u011Fin birine sar\u0131lmak istersin S\xF6yler misin
+      ben hangi duyguyum ? "
+    Answers:
+    - "H\xFCz\xFCn"
+    - "\xDCz\xFCnt\xFC"
+    - "Ne\u015Fe"
+    - Korku
+    correctAnswersID: 2
+  - Question: "Bir s\xFCrpriz kutusu gibiyim, Bir anda ortaya \xE7\u0131kar\u0131m,
+      G\xF6zlerini b\xFCy\xFCt\xFCr, Kalbini h\u0131zl\u0131 h\u0131zl\u0131 att\u0131r\u0131r\u0131m
+      S\xF6yle misin ben hangi duyguyum ? "
+    Answers:
+    - "H\xFCz\xFCn"
+    - "\u015Ea\u015Fk\u0131nl\u0131k\_"
+    - "Ne\u015Fe"
+    - Korku
+    correctAnswersID: 2
 --- !u!1 &1859214763
 GameObject:
   m_ObjectHideFlags: 0

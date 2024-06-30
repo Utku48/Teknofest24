@@ -15,7 +15,7 @@ public class ButtonController : MonoBehaviour
     public Image startMessageImage;
     public Image continueMessageImage;
 
-    public GameObject _answeredAllQ;
+   
 
     #endregion
 
