@@ -1,4 +1,5 @@
-using DG.Tweening;
+﻿using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -16,37 +17,52 @@ public class ChooseCharacters : MonoBehaviour
     [SerializeField] private Button _rightButton;
     [SerializeField] private Button _leftButton;
 
+    [SerializeField] private GameObject _pricePanel;
     [SerializeField] private TextMeshProUGUI _priceText;
 
-    public int a = 0;
+    [SerializeField] private GameObject _buyButton;
+    [SerializeField] private ParticleSystem _confetti;
+
+
+    [SerializeField] private Animator alienAnim;
+    [SerializeField] private Animator foxAnim;
+    [SerializeField] private Animator astourantAnim;
+
+
+    public int a;
 
     private void Start()
     {
-        _leftButton.gameObject.SetActive(false);
+        a = 0;
+
     }
 
     private void Update()
     {
         if (a >= 2)
         {
-            _priceText.gameObject.SetActive(true);
 
-            _priceText.text = a + 1 + " Star".ToString();
+            _pricePanel.gameObject.SetActive(true);
+            _priceText.text = (a + 1).ToString();
         }
+        else _pricePanel.gameObject.SetActive(false);
+
 
     }
 
     public void RightButtonClick()
     {
         a++;
-        if (a >= 4)
+
+
+        if (a >= 2)
         {
-            _rightButton.gameObject.SetActive(false);
+            _buyButton.transform.DOScale(new Vector3(2.5f, 2.5f, 2.5f), 1f);
         }
-        else
-        {
-            _rightButton.gameObject.SetActive(true);
-        }
+
+        _leftButton.gameObject.SetActive(a > 0);
+        _rightButton.gameObject.SetActive(a < 4);
+
 
         foreach (var character in _characters)
         {
@@ -63,15 +79,10 @@ public class ChooseCharacters : MonoBehaviour
     {
         a--;
 
-        if (a <= 1)
+        if (a < 2)
         {
-            _rightButton.gameObject.SetActive(false);
+            _buyButton.transform.DOScale(Vector3.zero, .7f);
         }
-        else
-        {
-            _rightButton.gameObject.SetActive(true);
-        }
-
 
         foreach (var character in _characters)
         {
@@ -85,11 +96,33 @@ public class ChooseCharacters : MonoBehaviour
     }
 
 
-    public void OnPlayClick()
+    public void BuyButton()
     {
-        SceneManager.LoadScene(1);
-    }
+        if (StarManager.Instance.star > 0 && (StarManager.Instance.star - (a + 1) >= 0))
+        {
+            StarManager.Instance.star -= (a + 1);
+            StarManager.Instance.jSonManagerStar.Save();
+            _confetti.Play();
+        }
+        if (a == 2)
+        {
+            //foxAnim.SetBool("choose", true);
+        }
+        if (a == 3)
+        {
+            //alienAnim.SetBool("choose", true);
+        }
+        if (a == 4)
+        {
+            astourantAnim.SetBool("choose", true);
+        }
 
+
+    }
+    public void ContinueButton()
+    {
+        SceneManager.LoadScene(2);
+    }
     IEnumerator ButtonOnOff()
     {
         yield return new WaitForSeconds(2f);

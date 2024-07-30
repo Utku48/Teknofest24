@@ -2,10 +2,10 @@ using UnityEngine;
 using System.Collections.Generic;
 
 
-[System.Serializable] 
+[System.Serializable]
 public class StarData
 {
-    public int JstarCount;
+    public int savedStarCount;
 
     public StarData()
     {
@@ -14,7 +14,7 @@ public class StarData
 
     public StarData(int starCount)
     {
-        this.JstarCount = starCount;
+        this.savedStarCount = starCount;
 
     }
 }
