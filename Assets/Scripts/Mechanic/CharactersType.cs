@@ -5,7 +5,7 @@ public class CharactersType : MonoBehaviour
 {
     public CharacterName characterName;
     
-    public int valueOfCharacter;   
+    public int IdCharacter;   
 
 
     public enum CharacterName

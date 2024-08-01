@@ -28,7 +28,7 @@ public class QuizManager : MonoBehaviour
 
     private void Update()
     {
-        print("CurrentQID: " + currentQuestionID);
+       
     }
 
     private void SetAnswer()

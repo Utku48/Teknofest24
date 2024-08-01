@@ -12,7 +12,6 @@ public class StarManager : MonoBehaviour
 
     public static StarManager Instance { get; private set; }
 
-    public int decreaseValue;
     private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.
@@ -26,34 +25,18 @@ public class StarManager : MonoBehaviour
             Instance = this;
         }
     }
+
+    private void Start()
+    {
+        star = jSonManagerStar.starData.savedStarCount;
+    }
     private void Update()
     {
         _starCounter.text = star.ToString();
     }
 
 
-    public void IncreaseStar()
-    {
-        star += 1;
-        jSonManagerStar.Save();
-    }
 
-    public void DecreaseStar() //butona basıp Alien gelince burası çalışyor. CharacterBoxTrigger içerisine bak
-    {
-        if (star <= 0 || star < decreaseValue)
-        {
-          
-            Debug.Log("Star sıfırdan küçük veya Star sayınız az");
-        }
-        else
-        {
-
-
-            star -= decreaseValue;
-            jSonManagerStar.Save();
-
-        }
-    }
 
 
 }

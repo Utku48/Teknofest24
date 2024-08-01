@@ -23,8 +23,7 @@ public class RocketManager : MonoBehaviour
     {
         Planets planetsComponent = other.gameObject.GetComponent<Planets>();
         if (planetsComponent != null)
-        {
-            
+        {           
 
             GameManager.Instance.UpdatePlanets();
         }

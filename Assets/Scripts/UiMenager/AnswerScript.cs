@@ -30,6 +30,7 @@ public class AnswerScript : MonoBehaviour
             quizManager.QuestionAnswerList.RemoveAt(quizManager.currentQuestionID);
             quizManager.generateQuestion();
 
+            lvl1ScoreController.trueCount++;
             lvl1ScoreController.increaseScore();
           
 

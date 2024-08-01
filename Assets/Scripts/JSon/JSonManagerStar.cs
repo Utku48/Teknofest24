@@ -41,7 +41,7 @@ public class JSonManagerStar : MonoBehaviour
         starData = JsonUtility.FromJson<StarData>(loadJSOn);
 
         //LoadEdilen coin sayısını ata
-        StarManager.Instance.star = starData.JstarCount;
+        StarManager.Instance.star = starData.savedStarCount;
     }
     #endregion
 
