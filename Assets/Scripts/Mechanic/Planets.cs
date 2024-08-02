@@ -6,14 +6,13 @@ public class Planets : MonoBehaviour
 {
 
     [SerializeField] public PlanetsEnum lvlID;
-    public GameObject _rocketPos;
+    public GameObject _rocketUpPos;
+    public GameObject _rocketFirstPos;
 
     public bool isEntered;
     public int gotStar = 0;
 
     public Image[] _starImages;
-
-    //Gezegene girilip girilmediği
     public enum PlanetsEnum
     {
         Lvl1,

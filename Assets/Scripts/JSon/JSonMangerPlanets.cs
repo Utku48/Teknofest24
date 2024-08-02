@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static Planets;
 using static UnityEditor.Progress;
 
@@ -12,7 +13,11 @@ public class JSonMangerPlanets : MonoBehaviour
 
     private void Start()
     {
-        LoadPlanetsData();
+        if (SceneManager.GetActiveScene().name == "LevelSelectionScene")
+        {
+            LoadPlanetsData();
+
+        }
     }
 
     #region Save&Load
@@ -40,8 +45,9 @@ public class JSonMangerPlanets : MonoBehaviour
         _planetsData = new PlanetsData(winnedStarCount, earnedStar);
         string saveJSon = JsonUtility.ToJson(_planetsData, true);
 
+
         File.WriteAllText(Application.persistentDataPath + "/" + levelId.ToString() + ".json", saveJSon);
-        File.WriteAllText(Application.persistentDataPath, saveJSon);
+
 
 
     }
