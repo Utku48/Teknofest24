@@ -1,6 +1,8 @@
-﻿using TMPro;
+﻿using System.IO;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEditor.Progress;
 
 
 
@@ -21,8 +23,16 @@ public class Lvl1ScoreController : MonoBehaviour
 
     private void Start()
     {
+        PlanetsData _planetsData = null;
 
-        score = jSonMangerPlanets._planetsData.wonStarCount;
+        if (File.Exists(Application.persistentDataPath + "/" + "Lvl1.json"))
+        {
+            string loadJSOn = File.ReadAllText(Application.persistentDataPath + "/" + "Lvl1.json");
+            _planetsData = JsonUtility.FromJson<PlanetsData>(loadJSOn);
+
+            score = _planetsData.wonStarCount;
+        }
+
         //jSonMangerPlanets.LoadPlanetsData();
         sahneAdi = SceneManager.GetActiveScene().name;
         //score = JSonMangerPlanets.dataBaseScore;
@@ -36,7 +46,15 @@ public class Lvl1ScoreController : MonoBehaviour
 
     public void increaseScore()
     {
-        if (trueCount % 2 == 0)
+        if (trueCount == 1)
+        {
+            score += 1;
+        }
+        if (trueCount == 2)
+        {
+            score += 1;
+        }
+        if (trueCount == 5)
         {
             score += 1;
         }

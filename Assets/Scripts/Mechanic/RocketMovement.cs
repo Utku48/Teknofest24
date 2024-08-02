@@ -1,4 +1,6 @@
 ﻿using DG.Tweening;
+using System.Collections.Generic;
+using System.Net.Sockets;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -28,13 +30,16 @@ public class RocketMovement : MonoBehaviour
                 if (hit.collider.gameObject.GetComponent<Planets>())
                 {
 
-                    GameObject _hitPlanet = hit.collider.GetComponent<Planets>()._rocketPos;
+                    GameObject _hitPlanet = hit.collider.GetComponent<Planets>()._rocketUpPos;
+                    GameObject _firstPos = hit.collider.GetComponent<Planets>()._rocketFirstPos;
 
                     Planets planetsComponent = hit.collider.gameObject.GetComponent<Planets>();
 
 
                     GoPlanet(_hitPlanet.transform.position,
                         _hitPlanet.transform.rotation,
+                        _firstPos.transform.position,
+                        _firstPos.transform.rotation,
                         hit.collider.gameObject.GetComponent<Planets>().lvlID.ToString(),
 
                      planetsComponent
@@ -48,35 +53,62 @@ public class RocketMovement : MonoBehaviour
     }
 
 
-    public void GoPlanet(Vector3 _childPos, Quaternion _childRot, string lvlName, Planets planetsComponent)
-    {
-        // Sequence ile yap
 
-        _rocket.transform.DOMove(_childPos, 1f).SetEase(Ease.Linear);
-        _rocket.transform.DORotate(_childRot.eulerAngles, 1.5f)
-            .OnComplete(() =>
+
+    public void GoPlanet(Vector3 upPos, Quaternion _childRot, Vector3 firstPos, Quaternion lastRot, string lvlName, Planets planetsComponent)
+    {
+        List<Vector3> positions = new List<Vector3>();
+
+        positions.Add(firstPos);
+        positions.Add(upPos);
+
+
+        _rocket.transform.DOPath(positions.ToArray(), 4f, PathType.CatmullRom).SetLookAt(.1f).SetEase(Ease.Linear).OnComplete(() =>
+        {
+            _rocket.transform.DOMove(firstPos, 2.5f).SetEase(Ease.InExpo).OnComplete(() =>
             {
-                
-                jSonManagerRocket.Save();
+                //jSonManagerRocket.Save();
 
                 if (planetsComponent != null)
                 {
-
+                    //SceneManager.LoadScene(lvlName);
                 }
                 else
                 {
                     Debug.LogError("Planets component is null!");
                 }
-                SceneManager.LoadScene(lvlName);
+
+                // Update planet information in the game manager
+                GameManager.Instance.UpdatePlanets();
             });
+        }
+        );
 
-        GameManager.Instance.UpdatePlanets();
+
+        // Move the rocket to the target position
+        //    _rocket.transform.DOMove(firstPos, 2f).SetEase(Ease.InExpo).OnComplete(() =>
+        //    {
+        //        _rocket.transform.DOMove(upPos, 1f).OnComplete(() =>
+        //        {
+        //            _rocket.transform.DOMove(firstPos, 3f).SetEase(Ease.Linear).OnComplete(() =>
+        //            {
+        //                // jSonManagerRocket.Save();
+
+        //                if (planetsComponent != null)
+        //                {
+        //                    // SceneManager.LoadScene(lvlName);
+        //                }
+        //                else
+        //                {
+        //                    Debug.LogError("Planets component is null!");
+        //                }
+
+        //                // Update planet information in the game manager
+        //                GameManager.Instance.UpdatePlanets();
+        //            });
+        //        });
+        //    });
+
     }
-
-
-
-
-
-
-
 }
+

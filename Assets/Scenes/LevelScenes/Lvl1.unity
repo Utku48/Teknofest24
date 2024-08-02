@@ -152,7 +152,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 166.965, z: 0}
 --- !u!1 &224471582
 GameObject:
@@ -184,7 +184,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &224471584
 MonoBehaviour:
@@ -304,7 +304,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: -185, z: 0}
 --- !u!1 &296679738
 GameObject:
@@ -543,7 +543,7 @@ RectTransform:
   - {fileID: 1772940213}
   - {fileID: 1779625383}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1096,86 +1096,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &606343025
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 824088374134899472, guid: 0be480b4078ac4040b50f3b054d8f51c,
-        type: 3}
-      propertyPath: m_Name
-      value: DesertPrefab
-      objectReference: {fileID: 0}
-    - target: {fileID: 2754996622769075195, guid: 0be480b4078ac4040b50f3b054d8f51c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4534900323163996248, guid: 0be480b4078ac4040b50f3b054d8f51c,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4534900323163996248, guid: 0be480b4078ac4040b50f3b054d8f51c,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.64
-      objectReference: {fileID: 0}
-    - target: {fileID: 4534900323163996248, guid: 0be480b4078ac4040b50f3b054d8f51c,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4534900323163996248, guid: 0be480b4078ac4040b50f3b054d8f51c,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 6.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 4534900323163996248, guid: 0be480b4078ac4040b50f3b054d8f51c,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.06974645
-      objectReference: {fileID: 0}
-    - target: {fileID: 4534900323163996248, guid: 0be480b4078ac4040b50f3b054d8f51c,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4534900323163996248, guid: 0be480b4078ac4040b50f3b054d8f51c,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.9975648
-      objectReference: {fileID: 0}
-    - target: {fileID: 4534900323163996248, guid: 0be480b4078ac4040b50f3b054d8f51c,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4534900323163996248, guid: 0be480b4078ac4040b50f3b054d8f51c,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4534900323163996248, guid: 0be480b4078ac4040b50f3b054d8f51c,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -172.001
-      objectReference: {fileID: 0}
-    - target: {fileID: 4534900323163996248, guid: 0be480b4078ac4040b50f3b054d8f51c,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0be480b4078ac4040b50f3b054d8f51c, type: 3}
 --- !u!1 &626104485
 GameObject:
   m_ObjectHideFlags: 0
@@ -3896,10 +3818,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1815896797}
   - component: {fileID: 1815896796}
-  - component: {fileID: 1815896798}
   - component: {fileID: 1815896799}
   - component: {fileID: 1815896800}
   - component: {fileID: 1815896801}
+  - component: {fileID: 1815896802}
   m_Layer: 0
   m_Name: Level1Manager
   m_TagString: Untagged
@@ -3921,7 +3843,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   earnedText: {fileID: 2099486793}
   answeredAllQText: {fileID: 1178526587}
-  jSonMangerPlanets: {fileID: 1815896798}
+  jSonMangerPlanets: {fileID: 1815896802}
   _riddlePanel: {fileID: 1787860963}
   score: 0
   earned: 0
@@ -3941,21 +3863,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1815896798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1815896795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ffc7c8144d8b9940b7d79d88ee145d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _planetsData:
-    wonStarCount: 0
-    earnedStar: 0
 --- !u!114 &1815896799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3995,7 +3902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   starData:
-    JstarCount: 0
+    savedStarCount: 0
 --- !u!114 &1815896801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4054,6 +3961,21 @@ MonoBehaviour:
     - "Ne\u015Fe"
     - Korku
     correctAnswersID: 2
+--- !u!114 &1815896802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815896795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ffc7c8144d8b9940b7d79d88ee145d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _planetsData:
+    wonStarCount: 0
+    earnedStar: 0
 --- !u!1 &1859214763
 GameObject:
   m_ObjectHideFlags: 0
@@ -4224,7 +4146,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!114 &1877014109
 MonoBehaviour:
@@ -7272,7 +7194,13 @@ Animator:
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'mixamorig:Hips'\n\tTransform 'mixamorig:LeftFoot'\n\tTransform
+    'mixamorig:Spine1'\n\tTransform 'mixamorig:LeftToeBase'\n\tTransform 'mixamorig:RightArm'\n\tTransform
+    'mixamorig:LeftLeg'\n\tTransform 'mixamorig:LeftShoulder'\n\tTransform 'mixamorig:RightFoot'\n\tTransform
+    'mixamorig:Head'\n\tTransform 'mixamorig:LeftUpLeg'\n\tand more ...\n\tFrom animation
+    clip 'choose'"
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
