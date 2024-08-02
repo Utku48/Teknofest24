@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -12,6 +13,9 @@ public class ChooseCharacters : MonoBehaviour
     StarManager _starManager;
 
     public List<GameObject> _characters = new List<GameObject>();
+
+    [SerializeField] private JSonCharacterManager _characterManager;
+
 
 
     [SerializeField] private Button _rightButton;
@@ -24,10 +28,9 @@ public class ChooseCharacters : MonoBehaviour
     [SerializeField] private ParticleSystem _confetti;
 
 
-    [SerializeField] private Animator alienAnim;
-    [SerializeField] private Animator foxAnim;
-    [SerializeField] private Animator astourantAnim;
+    [SerializeField] private Transform ImageParent;
 
+    [SerializeField] private GameObject _stageCh;
 
     public int a;
 
@@ -39,13 +42,9 @@ public class ChooseCharacters : MonoBehaviour
 
     private void Update()
     {
-        if (a >= 2)
-        {
+        _pricePanel.SetActive(a >= 2);
+        _priceText.text = (a + 1).ToString();
 
-            _pricePanel.gameObject.SetActive(true);
-            _priceText.text = (a + 1).ToString();
-        }
-        else _pricePanel.gameObject.SetActive(false);
 
 
     }
@@ -53,6 +52,7 @@ public class ChooseCharacters : MonoBehaviour
     public void RightButtonClick()
     {
         a++;
+        _stageCh = _characters[a].gameObject;
 
 
         if (a >= 2)
@@ -73,73 +73,85 @@ public class ChooseCharacters : MonoBehaviour
         _leftButton.gameObject.SetActive(false);
 
         StartCoroutine(ButtonOnOff());
+
+        SetCharacterImage();
+
     }
 
     public void LeftButtonClick()
     {
         a--;
+        _stageCh = _characters[a].gameObject;
 
         if (a < 2)
         {
-            _buyButton.transform.DOScale(Vector3.zero, .7f);
+            _buyButton.transform.DOScale(Vector3.zero, 0.7f);
         }
 
-        foreach (var character in _characters)
-        {
-            character.transform.DOMove(new Vector3((character.transform.position.x + 5), character.transform.position.y, character.transform.position.z), 2f);
-        }
-        _rightButton.gameObject.SetActive(false);
-        _leftButton.gameObject.SetActive(false);
-
+        MoveCharacters(5);
+        ToggleButtons(false);
         StartCoroutine(ButtonOnOff());
+
+        SetCharacterImage();
 
     }
 
 
+
     public void BuyButton()
     {
-        if (StarManager.Instance.star > 0 && (StarManager.Instance.star - (a + 1) >= 0))
+        if (_stageCh.GetComponent<CharactersType>().activeCharacter) return;
+
+        int cost = a + 1;
+        if (StarManager.Instance.star >= cost)
         {
-            StarManager.Instance.star -= (a + 1);
+            StarManager.Instance.star -= cost;
             StarManager.Instance.jSonManagerStar.Save();
             _confetti.Play();
-        }
-        if (a == 2)
-        {
-            //foxAnim.SetBool("choose", true);
-        }
-        if (a == 3)
-        {
-            //alienAnim.SetBool("choose", true);
-        }
-        if (a == 4)
-        {
-            astourantAnim.SetBool("choose", true);
+            _stageCh.GetComponent<CharactersType>().activeCharacter = true;
+            _stageCh.GetComponent<Animator>()?.SetBool("choose", true);
         }
 
+        SetCharacterImage();
+        _characterManager.SaveCharacterData();
 
     }
     public void ContinueButton()
     {
         SceneManager.LoadScene(2);
+
     }
-    IEnumerator ButtonOnOff()
+    private IEnumerator ButtonOnOff()
     {
         yield return new WaitForSeconds(2f);
+        _rightButton.gameObject.SetActive(a <= 3);
+        _leftButton.gameObject.SetActive(a >= 1);
+    }
 
-
-        if (a <= 3)
+    private void MoveCharacters(float xOffset)
+    {
+        foreach (var character in _characters)
         {
-            _rightButton.gameObject.SetActive(true);
-
+            character.transform.DOMove(new Vector3(character.transform.position.x + xOffset, character.transform.position.y, character.transform.position.z), 2f);
         }
+    }
 
-        if (a >= 1)
+    private void ToggleButtons(bool state)
+    {
+        _rightButton.gameObject.SetActive(state);
+        _leftButton.gameObject.SetActive(state);
+    }
+
+    private void SetCharacterImage()
+    {
+        if (_stageCh.GetComponent<CharactersType>().activeCharacter)
         {
 
-            _leftButton.gameObject.SetActive(true);
+            foreach (Transform item in ImageParent)
+            {
+                item.gameObject.SetActive(false);
+            }
+            ImageParent.GetChild(a).gameObject.SetActive(true);
         }
-
     }
 }
-

@@ -5,8 +5,10 @@ public class CharactersType : MonoBehaviour
 {
     public CharacterName characterName;
     
-    public int IdCharacter;   
+    public int IdCharacter;
 
+
+    public bool activeCharacter = false;
 
     public enum CharacterName
     {
