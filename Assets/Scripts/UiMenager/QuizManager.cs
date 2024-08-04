@@ -23,12 +23,12 @@ public class QuizManager : MonoBehaviour
         QuestionAnswerList = questionListData.QuestionAnswerList;
         QlistCount = QuestionAnswerList.Count;
         generateQuestion();
-        sayac--;
+        sayac = QlistCount;
     }
 
     private void Update()
     {
-       
+
     }
 
     private void SetAnswer()
@@ -51,17 +51,22 @@ public class QuizManager : MonoBehaviour
 
     public void generateQuestion()
     {
-        if (sayac < (QlistCount - 1))
+        sayac--;
+
+
+        if (sayac == 0)
         {
-            sayac++;
+            _answeredAllQPanel.SetActive(true);
+
         }
         else
         {
             questionListData.QuestionAnswerList = QuestionAnswerList;
             questionListData.SaveQuestionsToJson();
 
-            _answeredAllQPanel.SetActive(true);
         }
+
+
 
         if (QuestionAnswerList.Count == 0)
         {

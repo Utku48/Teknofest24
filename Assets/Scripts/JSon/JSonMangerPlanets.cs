@@ -11,6 +11,7 @@ public class JSonMangerPlanets : MonoBehaviour
     public PlanetsData _planetsData;
     public static int dataBaseScore;
 
+
     private void Start()
     {
         if (SceneManager.GetActiveScene().name == "LevelSelectionScene")
@@ -39,10 +40,10 @@ public class JSonMangerPlanets : MonoBehaviour
 
     }
 
-    public void Save(int winnedStarCount, string levelId, int earnedStar)
+    public void Save(int winnedStarCount, string levelId, int trueCount)
     {
 
-        _planetsData = new PlanetsData(winnedStarCount, earnedStar);
+        _planetsData = new PlanetsData(winnedStarCount, trueCount);
         string saveJSon = JsonUtility.ToJson(_planetsData, true);
 
 

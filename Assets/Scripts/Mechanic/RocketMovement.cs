@@ -67,11 +67,11 @@ public class RocketMovement : MonoBehaviour
         {
             _rocket.transform.DOMove(firstPos, 2.5f).SetEase(Ease.InExpo).OnComplete(() =>
             {
-                //jSonManagerRocket.Save();
+                jSonManagerRocket.Save();
 
                 if (planetsComponent != null)
                 {
-                    //SceneManager.LoadScene(lvlName);
+                    SceneManager.LoadScene(lvlName);
                 }
                 else
                 {

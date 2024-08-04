@@ -25,6 +25,7 @@ public class ChooseCharacters : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _priceText;
 
     [SerializeField] private GameObject _buyButton;
+    [SerializeField] private GameObject _settingPanel;
     [SerializeField] private ParticleSystem _confetti;
 
 
@@ -115,6 +116,25 @@ public class ChooseCharacters : MonoBehaviour
         SetCharacterImage();
         _characterManager.SaveCharacterData();
 
+    }
+
+    public void SettingButton()
+    {
+        _settingPanel.SetActive(true);
+        foreach (var item in _characters)
+        {
+            item.SetActive(false);
+        }
+    }
+
+    public void CloseButton()
+    {
+
+        _settingPanel.SetActive(false);
+        foreach (var item in _characters)
+        {
+            item.SetActive(true);
+        }
     }
     public void ContinueButton()
     {
