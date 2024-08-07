@@ -28,6 +28,9 @@ public class ChooseCharacters : MonoBehaviour
     [SerializeField] private GameObject _settingPanel;
     [SerializeField] private ParticleSystem _confetti;
 
+    [SerializeField] private GameObject _door;
+
+
 
     [SerializeField] private Transform ImageParent;
 
@@ -138,8 +141,8 @@ public class ChooseCharacters : MonoBehaviour
     }
     public void ContinueButton()
     {
-        SceneManager.LoadScene(2);
-
+        _door.SetActive(true);
+        StartCoroutine(LoadScene());
     }
     private IEnumerator ButtonOnOff()
     {
@@ -173,5 +176,11 @@ public class ChooseCharacters : MonoBehaviour
             }
             ImageParent.GetChild(a).gameObject.SetActive(true);
         }
+    }
+
+    IEnumerator LoadScene()
+    {
+        yield return new WaitForSeconds(4f);
+        SceneManager.LoadScene(2);
     }
 }
