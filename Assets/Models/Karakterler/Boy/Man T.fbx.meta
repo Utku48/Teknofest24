@@ -3,7 +3,42 @@ guid: 5548adf72fcd3e14e91d084b5f0aa64b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Girl-skin
+    second: {fileID: 2100000, guid: 7c5d786d1461b9e438026cb598b705fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: caae6d777cd8e964f80a44345265a032, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.005
+    second: {fileID: 2100000, guid: 5b1adabd3379dbb4cb0f1b0c0172df89, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: character-eyes.002
+    second: {fileID: 2100000, guid: e8b0af6967023454fb7416b7d0fb6896, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: new hair.001
+    second: {fileID: 2100000, guid: e8fd440b729151845b5236985dc66b35, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pant
+    second: {fileID: 2100000, guid: 136a1cc99461d8147876e1c717fcb99d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: thirt
+    second: {fileID: 2100000, guid: eb28e038b053b9b40a611b6c9761b369, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

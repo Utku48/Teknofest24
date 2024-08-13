@@ -25,6 +25,10 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+  - DR_CEL_EXTRA_ON
+  - DR_ENABLE_LIGHTMAP_DIR
+  - DR_RIM_ON
+  - DR_SPECULAR_ON
   - _CELPRIMARYMODE_SINGLE
   - _NORMALMAP
   - _TEXTUREBLENDINGMODE_MULTIPLY
@@ -205,7 +209,7 @@ Material:
     - _Brightness: 1
     - _BumpScale: 1
     - _CameraDistanceImpact: 0
-    - _CelExtraEnabled: 0
+    - _CelExtraEnabled: 1
     - _CelNumSteps: 3
     - _CelPrimaryMode: 1
     - _ClearCoatMask: 0
@@ -229,10 +233,10 @@ Material:
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
     - _FlatRimEdgeSmoothness: 0.5
-    - _FlatRimLightAlign: 0
-    - _FlatRimSize: 0.5
-    - _FlatSpecularEdgeSmoothness: 0
-    - _FlatSpecularSize: 0.1
+    - _FlatRimLightAlign: 0.426
+    - _FlatRimSize: 0.063
+    - _FlatSpecularEdgeSmoothness: 0.073
+    - _FlatSpecularSize: 0.45
     - _Flatness: 1
     - _FlatnessExtra: 1
     - _GlossMapScale: 1
@@ -258,8 +262,8 @@ Material:
     - _LightContribution: 0
     - _LightFalloffSize: 0
     - _LightThreshold: 0.5
-    - _LightmapDirectionPitch: 0
-    - _LightmapDirectionYaw: 0
+    - _LightmapDirectionPitch: 259
+    - _LightmapDirectionYaw: 14
     - _Metallic: 0
     - _Mode: 0
     - _NormalMapIntensity: 1
@@ -269,27 +273,27 @@ Material:
     - _OutlineEnabled: 0
     - _OutlineScale: 1
     - _OutlineWidth: 1
-    - _OverrideLightmapDir: 0
+    - _OverrideLightmapDir: 1
     - _Parallax: 0.02
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _RenderFace: 2
     - _RenderPriority: 0
     - _Rim: 0
-    - _RimEnabled: 0
+    - _RimEnabled: 1
     - _RimSize: 1
     - _RimSmoothness: 0.5
     - _RimThresholdOffset: 0.25
     - _Saturation: 1
-    - _SelfShadingSize: 0.5
-    - _SelfShadingSizeExtra: 0.6
-    - _ShadowEdgeSize: 0.05
-    - _ShadowEdgeSizeExtra: 0.05
+    - _SelfShadingSize: 0.378
+    - _SelfShadingSizeExtra: 0.455
+    - _ShadowEdgeSize: 0.5
+    - _ShadowEdgeSizeExtra: 0.28
     - _SketchMapScale: 1
     - _Smoothness: 0.337
     - _SmoothnessTextureChannel: 0
     - _Specular: 0
-    - _SpecularEnabled: 0
+    - _SpecularEnabled: 1
     - _SpecularHighlights: 1
     - _SpecularIntensity: 1
     - _SpecularSmoothness: 0
@@ -324,21 +328,21 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _AlbedoColor: {r: 1, g: 1, b: 1, a: 1}
-    - _BaseColor: {r: 0.9063317, g: 0.9063317, b: 0.9063317, a: 1}
+    - _BaseColor: {r: 1, g: 0.88366705, b: 0.6650944, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _ColorDim: {r: 0.9063317, g: 0.9063317, b: 0.9063317, a: 1}
+    - _ColorDim: {r: 0, g: 0.030731715, b: 0.3584906, a: 1}
     - _ColorDimCurve: {r: 0.85023, g: 0.85034, b: 0.8504499, a: 0.85056}
-    - _ColorDimExtra: {r: 0.85023, g: 0.85034, b: 0.8504499, a: 0.85056}
+    - _ColorDimExtra: {r: 1, g: 0.282478, b: 0.033018887, a: 1}
     - _ColorDimSteps: {r: 0.85023, g: 0.85034, b: 0.8504499, a: 0.85056}
     - _ColorGradient: {r: 0.85023, g: 0.85034, b: 0.85045, a: 0.85056}
     - _DissolveBorderColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FlatRimColor: {r: 0.85023, g: 0.85034, b: 0.85045, a: 0.85056}
-    - _FlatSpecularColor: {r: 0.85023, g: 0.85034, b: 0.85045, a: 0.85056}
+    - _FlatRimColor: {r: 0.08435073, g: 0, b: 0.4528302, a: 1}
+    - _FlatSpecularColor: {r: 1, g: 0.94811314, b: 0.94811314, a: 1}
     - _GoochBrightColor: {r: 1, g: 1, b: 1, a: 1}
     - _GoochDarkColor: {r: 0, g: 0, b: 0, a: 1}
     - _IridescenceColor: {r: 1, g: 1, b: 1, a: 0.5}
-    - _LightmapDirection: {r: 0, g: 1, b: 0, a: 0}
+    - _LightmapDirection: {r: -0.23747712, g: -0.19080885, b: -0.9524687, a: 0}
     - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimBrightColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
