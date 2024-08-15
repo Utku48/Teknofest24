@@ -10,7 +10,7 @@ public class Planets : MonoBehaviour
     public GameObject _rocketFirstPos;
 
     public bool isEntered;
-    public int gotStar = 0;
+    public int gotStar;
 
     public Image[] _starImages;
     public enum PlanetsEnum
@@ -31,6 +31,10 @@ public class Planets : MonoBehaviour
         return lvlID;
     }
 
+    void Start()
+    {
+
+    }
     private void Update()
     {
         if (gotStar == 1)

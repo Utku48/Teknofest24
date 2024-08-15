@@ -20,6 +20,7 @@ public class StarManager : MonoBehaviour
         {
             Destroy(this);
         }
+        
         else
         {
             Instance = this;

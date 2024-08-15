@@ -12,8 +12,12 @@ public class QuizManager : MonoBehaviour
     public Lvl1ScoreController scoreController;
 
     public TextMeshProUGUI QuesionTxt;
+
     public GameObject _answeredAllQPanel;
     public GameObject repeatButton;
+    public ParticleSystem _confetti;
+    public GameObject _riddlePanel;
+
     public int sayac;
     public int QlistCount;
 
@@ -26,10 +30,7 @@ public class QuizManager : MonoBehaviour
         sayac = QlistCount;
     }
 
-    private void Update()
-    {
 
-    }
 
     private void SetAnswer()
     {
@@ -57,6 +58,8 @@ public class QuizManager : MonoBehaviour
         if (sayac == 0)
         {
             _answeredAllQPanel.SetActive(true);
+            _riddlePanel.SetActive(false);
+            _confetti.Play();
 
         }
         else
@@ -71,6 +74,7 @@ public class QuizManager : MonoBehaviour
         if (QuestionAnswerList.Count == 0)
         {
             repeatButton.SetActive(false);
+
             return;
         }
 

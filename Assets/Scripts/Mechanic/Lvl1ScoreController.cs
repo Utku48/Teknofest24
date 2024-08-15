@@ -2,6 +2,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using static UnityEditor.Progress;
 
 
@@ -12,9 +13,11 @@ public class Lvl1ScoreController : MonoBehaviour
     public TextMeshProUGUI earnedText;
     public TextMeshProUGUI answeredAllQText;
     public JSonMangerPlanets jSonMangerPlanets;
-    [SerializeField] private GameObject _riddlePanel;
+
+
 
     public int score;
+
     string sahneAdi;
 
 
@@ -49,14 +52,17 @@ public class Lvl1ScoreController : MonoBehaviour
         if (trueCount == 1 && score == 0)
         {
             score += 1;
+
         }
         if (trueCount == 2 && score == 1)
         {
             score += 1;
+
         }
         if (trueCount == 5 && score == 2)
         {
             score += 1;
+
         }
         jSonMangerPlanets.Save(score, sahneAdi, trueCount);
     }

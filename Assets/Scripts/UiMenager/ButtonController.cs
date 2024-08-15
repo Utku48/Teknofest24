@@ -1,4 +1,4 @@
-using DG.Tweening;
+﻿using DG.Tweening;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -9,13 +9,16 @@ public class ButtonController : MonoBehaviour
 {
     #region UiPanels
     public GameObject _riddlePanel;
+    public GameObject _backPanel;
+
+    public GameObject _turningPanel;
 
     public Button startButton;
     public Button continueButton;
     public Image startMessageImage;
     public Image continueMessageImage;
 
-   
+    public float rotationSpeed;
 
     #endregion
 
@@ -30,8 +33,17 @@ public class ButtonController : MonoBehaviour
     private void Start()
     {
         _astAnim = astourant.GetComponent<Animator>();
+
     }
 
+
+    private void Update()
+    {
+
+        _turningPanel.transform.DORotate(new Vector3(0, 0, 360), 360 / rotationSpeed, RotateMode.FastBeyond360)
+                 .SetEase(Ease.Linear) // Sabit hızda döndür
+                 .SetLoops(-1, LoopType.Incremental);
+    }
     public void OnContinueButton()
     {
         _astAnim.SetBool("isWalking", true);
@@ -58,6 +70,8 @@ public class ButtonController : MonoBehaviour
         StartCoroutine(ActivateQuestionNanswers());
         astourant.SetActive(false);
         continueMessageImage.gameObject.SetActive(false);
+        startButton.gameObject.SetActive(false);
+        _backPanel.gameObject.SetActive(true);
     }
 
     IEnumerator ActivateQuestionNanswers()
@@ -81,6 +95,7 @@ public class ButtonController : MonoBehaviour
         SceneManager.LoadScene(2);
         StarManager.Instance.jSonManagerStar.Save();
     }
+
 
 
 }
