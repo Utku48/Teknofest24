@@ -13,6 +13,9 @@ public class ButtonController : MonoBehaviour
 
     public GameObject _turningPanel;
 
+    public GameObject _starUi;
+    public GameObject _planetUi;
+
     public Button startButton;
     public Button continueButton;
     public Image startMessageImage;
@@ -58,8 +61,10 @@ public class ButtonController : MonoBehaviour
         astourant.transform.DOMove(_astGoPos.transform.position, 2f).OnComplete(() =>
         {
             _astAnim.SetBool("isWalking", false);
+            astourant.transform.DORotateQuaternion(_astGoPos.transform.localRotation, 2f);
             continueMessageImage.gameObject.SetActive(true);
         });
+
 
 
     }
@@ -72,6 +77,8 @@ public class ButtonController : MonoBehaviour
         continueMessageImage.gameObject.SetActive(false);
         startButton.gameObject.SetActive(false);
         _backPanel.gameObject.SetActive(true);
+        _starUi.SetActive(false);
+        _planetUi.SetActive(false);
     }
 
     IEnumerator ActivateQuestionNanswers()

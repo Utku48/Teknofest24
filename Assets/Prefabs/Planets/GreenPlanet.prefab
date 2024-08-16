@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8761457111783488655}
   - component: {fileID: 3749582374953695154}
   - component: {fileID: 7303782301635603217}
+  - component: {fileID: 1609638113873461268}
   m_Layer: 0
   m_Name: GreenPlanet
   m_TagString: Untagged
@@ -29,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 5448602331186404860}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.4092603, y: 2.41, z: 8.709}
-  m_LocalScale: {x: 1.1856, y: 1.1856, z: 1.1856}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: -1
@@ -128,3 +129,24 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1609638113873461268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5448602331186404860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8abd6b91c65f034bbeea1b8d7b57c13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lvlID: 1
+  _rocketUpPos: {fileID: 0}
+  _rocketFirstPos: {fileID: 0}
+  isEntered: 0
+  gotStar: 0
+  _starImages:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
