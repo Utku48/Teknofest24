@@ -107,10 +107,10 @@ public class ChooseCharacters : MonoBehaviour
         if (_stageCh.GetComponent<CharactersType>().activeCharacter) return;
 
         int cost = a + 1;
-        if (StarManager.Instance.star >= cost)
+        if (StarManager.Instance.starData.savedStarCount >= cost)
         {
-            StarManager.Instance.star -= cost;
-            StarManager.Instance.jSonManagerStar.Save();
+            StarManager.Instance.starData.savedStarCount -= cost;
+            StarManager.Instance.Save();
             _confetti.Play();
             _stageCh.GetComponent<CharactersType>().activeCharacter = true;
             _stageCh.GetComponent<Animator>()?.SetBool("choose", true);

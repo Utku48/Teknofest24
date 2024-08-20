@@ -3,20 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
+
 using static Faces;
 
 public class Lvl2Manager : MonoBehaviour
 {
     public List<GameObject> faces = new List<GameObject>();
 
-    [SerializeField] private int a;
+
     [SerializeField] private int star;
     [SerializeField] private int trueCount;
+
+    [SerializeField] private GameObject activeFace;
+
     [SerializeField] private TextMeshProUGUI starCount;
 
     [SerializeField] private JsonManagerLvl2 jsonManager;
-    public JSonManagerStar jSonManagerStar;
+
 
     void Start()
     {
@@ -29,57 +32,85 @@ public class Lvl2Manager : MonoBehaviour
         jsonManager.LoadLevel2Data();
         star = jsonManager.level2Data.Lvl2Star;
         trueCount = jsonManager.level2Data.trueCount;
-        a = 0;
+
         for (int i = 1; i < faces.Count; i++)
         {
             float targetY = faces[i].transform.position.y + (i * 2f);
             faces[i].transform.DOMove(
                 new Vector3(faces[i].transform.position.x, targetY, faces[i].transform.position.z), 2f);
         }
+
+
+        if (faces.Count == 0)
+            return;
+        activeFace = faces[0].gameObject;
     }
 
     void Update()
     {
         starCount.text = star.ToString();
+
     }
+
+    public void MoveButton(FaceState targetFaceState, float xDirection)
+    {
+        if (faces.Count == 0)
+            return;
+        activeFace = faces[0].gameObject;
+
+
+        activeFace.transform.DOMove(
+            new Vector3(activeFace.transform.position.x,
+                        activeFace.transform.position.y,
+                        activeFace.transform.position.z - 7.5f),
+            0.7f)
+        .OnComplete(() =>
+        {
+            activeFace.transform.DOMove(
+                new Vector3(activeFace.transform.position.x + xDirection,
+                            activeFace.transform.position.y,
+                            activeFace.transform.position.z),
+                0.15f)
+            .OnComplete(() =>
+            {
+                if (faces.Count > 0 && faces[0].GetComponent<Faces>()?.face == targetFaceState)
+                {
+                    Debug.Log($"{targetFaceState} yönüne doğru gidildi");
+                    trueCount++;
+                    UpdateStarBasedOnTrueCount();
+
+                    jsonManager.level2Data.Lvl2Star = star;
+                    jsonManager.level2Data.trueCount = trueCount;
+                    jsonManager.SaveLevel2Data();
+                }
+                else
+                {
+                    Debug.Log("Yanlış Yön");
+                }
+
+                if (faces.Count > 0)
+                {
+                    faces.RemoveAt(0);
+                }
+            });
+        });
+    }
+
+
 
     public void RightButton()
     {
-        if (a >= 0 && a < faces.Count && faces[a].GetComponent<Faces>()?.face == FaceState.right)
-        {
-            Debug.Log("Sağa gidildi");
-            trueCount++;
-            UpdateStarBasedOnTrueCount();
+        MoveButton(FaceState.right, 10f);
 
-            jsonManager.level2Data.Lvl2Star = star;
-            jsonManager.level2Data.trueCount = trueCount;
-            jsonManager.SaveLevel2Data();
-        }
-        else
-        {
-            Debug.Log("Sağa gitti ama sola gitmeliydi");
-        }
-        a++;
     }
 
     public void LeftButton()
     {
-        if (a >= 0 && a < faces.Count && faces[a].GetComponent<Faces>()?.face == FaceState.left)
-        {
-            Debug.Log("Sola gidildi");
-            trueCount++;
-            UpdateStarBasedOnTrueCount();
+        MoveButton(FaceState.left, -10f);
 
-            jsonManager.level2Data.Lvl2Star = star;
-            jsonManager.level2Data.trueCount = trueCount;
-            jsonManager.SaveLevel2Data();
-        }
-        else
-        {
-            Debug.Log("Sola gitti ama sağa gitmeliydi");
-        }
-        a++;
     }
+
+
 
     private void UpdateStarBasedOnTrueCount()
     {
@@ -95,6 +126,14 @@ public class Lvl2Manager : MonoBehaviour
         else if (trueCount == 5 && star == 2)
         {
             star += 1;
+        }
+    }
+
+    private void MoveAllFaces()
+    {
+        foreach (var item in faces)
+        {
+            item.transform.DOMove(new Vector3(item.transform.position.x, item.transform.position.y - 2f, item.transform.position.z - 2f), 2f);
         }
     }
 }

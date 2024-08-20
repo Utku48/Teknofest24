@@ -12,14 +12,4 @@ public class Faces : MonoBehaviour
 
     public FaceState face;
 
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-}
+ }

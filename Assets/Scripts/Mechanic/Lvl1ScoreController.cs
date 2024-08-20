@@ -32,7 +32,7 @@ public class Lvl1ScoreController : MonoBehaviour
             string loadJSOn = File.ReadAllText(Application.persistentDataPath + "/" + "Lvl1.json");
             _planetsData = JsonUtility.FromJson<PlanetsData>(loadJSOn);
 
-            score = _planetsData.wonStarCount;
+            score = StarManager.Instance.starData.savedStarCount;
             trueCount = _planetsData.trueCount;
         }
 
@@ -65,6 +65,7 @@ public class Lvl1ScoreController : MonoBehaviour
 
         }
         jSonMangerPlanets.Save(score, sahneAdi, trueCount);
+
     }
 
 

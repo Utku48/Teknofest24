@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using TMPro;
+using System.IO;
 
 
 public class StarManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _starCounter;
-    public int star;
 
-    public JSonManagerStar jSonManagerStar;
+    public StarData starData;
 
 
     public static StarManager Instance { get; private set; }
@@ -20,7 +20,7 @@ public class StarManager : MonoBehaviour
         {
             Destroy(this);
         }
-        
+
         else
         {
             Instance = this;
@@ -29,13 +29,46 @@ public class StarManager : MonoBehaviour
 
     private void Start()
     {
-        star = jSonManagerStar.starData.savedStarCount;
+        LoadStarData();
     }
     private void Update()
     {
-        _starCounter.text = star.ToString();
+        _starCounter.text = starData.savedStarCount.ToString();
     }
 
+    private void LoadStarData()
+    {
+        if (File.Exists(Application.persistentDataPath + "/CoinData.json"))
+        {
+            Debug.Log("loading");
+            Load();
+        }
+
+    }
+
+    public void Save()
+    {
+        starData = new StarData(starData.savedStarCount);
+        string saveJson = JsonUtility.ToJson(starData, true);
+
+        File.WriteAllText(Application.persistentDataPath + "/CoinData.json", saveJson);
+
+
+    }
+
+    public void Load()
+    {
+        string loadJSOn = File.ReadAllText(Application.persistentDataPath + "/CoinData.json");
+        starData = JsonUtility.FromJson<StarData>(loadJSOn);
+
+
+    }
+
+
+    public static void AddStar(int amount)
+    {
+
+    }
 
 
 

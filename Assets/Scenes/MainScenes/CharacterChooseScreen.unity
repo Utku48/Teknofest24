@@ -136,7 +136,6 @@ GameObject:
   - component: {fileID: 28237027}
   - component: {fileID: 28237026}
   - component: {fileID: 28237028}
-  - component: {fileID: 28237029}
   - component: {fileID: 28237030}
   m_Layer: 0
   m_Name: CharacterSceneManager
@@ -203,22 +202,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _starCounter: {fileID: 1920779085}
-  star: 0
-  jSonManagerStar: {fileID: 28237029}
---- !u!114 &28237029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 28237025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f334863ecf53127479f4bb3c6afa31a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   starData:
-    savedStarCount: 25
+    savedStarCount: 0
 --- !u!114 &28237030
 MonoBehaviour:
   m_ObjectHideFlags: 0
