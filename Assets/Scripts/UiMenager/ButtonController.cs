@@ -16,6 +16,8 @@ public class ButtonController : MonoBehaviour
     public GameObject _starUi;
     public GameObject _planetUi;
 
+    public GameObject _lvl1Door;
+
     public Button startButton;
     public Button continueButton;
     public Image startMessageImage;
@@ -36,7 +38,7 @@ public class ButtonController : MonoBehaviour
     private void Start()
     {
         _astAnim = astourant.GetComponent<Animator>();
-
+        StartCoroutine(ActiveContinueButton());
     }
 
 
@@ -54,8 +56,7 @@ public class ButtonController : MonoBehaviour
         continueButton.gameObject.SetActive(false);
         startMessageImage.gameObject.SetActive(false);
 
-
-
+        StartCoroutine(ActiveStartButton());
 
 
         astourant.transform.DOMove(_astGoPos.transform.position, 2f).OnComplete(() =>
@@ -71,7 +72,8 @@ public class ButtonController : MonoBehaviour
 
     public void OnStartButton()
     {
-        _riddlePanel.SetActive(true);
+        StartCoroutine(OpenDoorAndShowRiddle());
+
         StartCoroutine(ActivateQuestionNanswers());
         astourant.SetActive(false);
         continueMessageImage.gameObject.SetActive(false);
@@ -83,6 +85,7 @@ public class ButtonController : MonoBehaviour
 
     IEnumerator ActivateQuestionNanswers()
     {
+
         for (int i = 0; i < QuestionNanswers.Length; i++)
         {
             QuestionNanswers[i].gameObject.SetActive(true);
@@ -103,6 +106,29 @@ public class ButtonController : MonoBehaviour
         StarManager.Instance.Save();
     }
 
+    IEnumerator ActiveContinueButton()
+    {
+        yield return new WaitForSeconds(1f);
+        continueButton.GetComponent<Button>().enabled = true;
+        continueButton.GetComponent<Animator>().enabled = true;
 
+
+    }
+
+    IEnumerator ActiveStartButton()
+    {
+        yield return new WaitForSeconds(1f);
+        startButton.GetComponent<Button>().enabled = true;
+        startButton.GetComponent<Animator>().enabled = true;
+
+
+    }
+
+    IEnumerator OpenDoorAndShowRiddle()
+    {
+        _lvl1Door.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        _riddlePanel.transform.DOScale(new Vector3(1f, 2.25f, 1f), 4f);
+    }
 
 }

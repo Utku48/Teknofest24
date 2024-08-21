@@ -13,7 +13,7 @@ public class RocketMovement : MonoBehaviour
 
     public JSonManagerRocket jSonManagerRocket;
 
-
+    [SerializeField] private GameObject _doorClose;
 
     private void Update()
     {
@@ -46,7 +46,6 @@ public class RocketMovement : MonoBehaviour
 
                         );
 
-
                 }
             }
         }
@@ -65,7 +64,9 @@ public class RocketMovement : MonoBehaviour
 
         _rocket.transform.DOPath(positions.ToArray(), 4f, PathType.CatmullRom).SetLookAt(.1f).SetEase(Ease.Linear).OnComplete(() =>
         {
-            _rocket.transform.DOMove(firstPos, 2.5f).SetEase(Ease.InExpo).OnComplete(() =>
+
+            _doorClose.SetActive(true);
+            _rocket.transform.DOMove(firstPos, .5f).SetEase(Ease.InExpo).OnComplete(() =>
             {
                 jSonManagerRocket.Save();
 
@@ -80,34 +81,11 @@ public class RocketMovement : MonoBehaviour
 
                 // Update planet information in the game manager
                 GameManager.Instance.UpdatePlanets();
+
+
             });
         }
         );
-
-
-        // Move the rocket to the target position
-        //    _rocket.transform.DOMove(firstPos, 2f).SetEase(Ease.InExpo).OnComplete(() =>
-        //    {
-        //        _rocket.transform.DOMove(upPos, 1f).OnComplete(() =>
-        //        {
-        //            _rocket.transform.DOMove(firstPos, 3f).SetEase(Ease.Linear).OnComplete(() =>
-        //            {
-        //                // jSonManagerRocket.Save();
-
-        //                if (planetsComponent != null)
-        //                {
-        //                    // SceneManager.LoadScene(lvlName);
-        //                }
-        //                else
-        //                {
-        //                    Debug.LogError("Planets component is null!");
-        //                }
-
-        //                // Update planet information in the game manager
-        //                GameManager.Instance.UpdatePlanets();
-        //            });
-        //        });
-        //    });
 
     }
 }

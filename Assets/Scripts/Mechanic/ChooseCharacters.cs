@@ -20,6 +20,7 @@ public class ChooseCharacters : MonoBehaviour
 
     [SerializeField] private Button _rightButton;
     [SerializeField] private Button _leftButton;
+    [SerializeField] private Button _continueButton;
 
     [SerializeField] private GameObject _pricePanel;
     [SerializeField] private TextMeshProUGUI _priceText;
@@ -64,6 +65,19 @@ public class ChooseCharacters : MonoBehaviour
             _buyButton.transform.DOScale(new Vector3(2.5f, 2.5f, 2.5f), 1f);
         }
 
+        if (_stageCh.GetComponent<CharactersType>().activeCharacter)
+        {
+            _continueButton.GetComponent<Button>().enabled = true;
+            _continueButton.GetComponent<Animator>().enabled = true;
+
+        }
+        else
+        {
+            _continueButton.GetComponent<Button>().enabled = false;
+            _continueButton.GetComponent<Animator>().enabled = false;
+        }
+
+
         _leftButton.gameObject.SetActive(a > 0);
         _rightButton.gameObject.SetActive(a < 4);
 
@@ -76,10 +90,12 @@ public class ChooseCharacters : MonoBehaviour
         _rightButton.gameObject.SetActive(false);
         _leftButton.gameObject.SetActive(false);
 
-        StartCoroutine(ButtonOnOff());
 
+        StartCoroutine(ButtonOnOff());
         SetCharacterImage();
 
+        StarManager.Instance.starData.a = a;
+        StarManager.Instance.Save();
     }
 
     public void LeftButtonClick()
@@ -92,12 +108,26 @@ public class ChooseCharacters : MonoBehaviour
             _buyButton.transform.DOScale(Vector3.zero, 0.7f);
         }
 
+        if (_stageCh.GetComponent<CharactersType>().activeCharacter)
+        {
+            _continueButton.GetComponent<Button>().enabled = true;
+            _continueButton.GetComponent<Animator>().enabled = true;
+
+        }
+        else
+        {
+            _continueButton.GetComponent<Button>().enabled = false;
+            _continueButton.GetComponent<Animator>().enabled = false;
+        }
+
         MoveCharacters(5);
         ToggleButtons(false);
         StartCoroutine(ButtonOnOff());
 
         SetCharacterImage();
 
+        StarManager.Instance.starData.a = a;
+        StarManager.Instance.Save();
     }
 
 
@@ -116,9 +146,24 @@ public class ChooseCharacters : MonoBehaviour
             _stageCh.GetComponent<Animator>()?.SetBool("choose", true);
         }
 
+
+        if (_stageCh.GetComponent<CharactersType>().activeCharacter)
+        {
+            _continueButton.GetComponent<Button>().enabled = true;
+            _continueButton.GetComponent<Animator>().enabled = true;
+
+        }
+        else
+        {
+            _continueButton.GetComponent<Button>().enabled = false;
+            _continueButton.GetComponent<Animator>().enabled = false;
+        }
+
         SetCharacterImage();
         _characterManager.SaveCharacterData();
 
+        StarManager.Instance.starData.a = a;
+        StarManager.Instance.Save();
     }
 
     public void SettingButton()

@@ -12,9 +12,10 @@ public class StarManager : MonoBehaviour
 
     public static StarManager Instance { get; private set; }
 
+    // If there is an instance, and it's not me, delete myself.
     private void Awake()
     {
-        // If there is an instance, and it's not me, delete myself.
+        LoadStarData();
 
         if (Instance != null && Instance != this)
         {
@@ -29,7 +30,6 @@ public class StarManager : MonoBehaviour
 
     private void Start()
     {
-        LoadStarData();
     }
     private void Update()
     {
@@ -48,7 +48,7 @@ public class StarManager : MonoBehaviour
 
     public void Save()
     {
-        starData = new StarData(starData.savedStarCount);
+        starData = new StarData(starData.savedStarCount, starData.a);
         string saveJson = JsonUtility.ToJson(starData, true);
 
         File.WriteAllText(Application.persistentDataPath + "/CoinData.json", saveJson);

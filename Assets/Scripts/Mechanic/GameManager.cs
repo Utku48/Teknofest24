@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,7 +8,12 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public List<Planets> planets = new List<Planets>();
 
+    [SerializeField] private Transform ImageParent;
 
+    int a;
+
+    [SerializeField] private GameObject _doorOpen;
+    
     public static GameManager Instance { get; private set; }
     private void Awake()
     {
@@ -24,9 +29,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
     private void Start()
     {
         UpdatePlanets();
+        a = StarManager.Instance.starData.a;
+
+        SetCharacterImage();
 
     }
 
@@ -34,7 +43,9 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
-
+    private void Update()
+    {
+    }
     public void UpdatePlanets()
     {
         GetComponent<JSonMangerPlanets>().LoadPlanetsData();
@@ -47,4 +58,18 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+
+    private void SetCharacterImage()
+    {
+
+
+        foreach (Transform item in ImageParent)
+        {
+            item.gameObject.SetActive(false);
+        }
+        ImageParent.GetChild(a).gameObject.SetActive(true);
+    }
+
+   
 }

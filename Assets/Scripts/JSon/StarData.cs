@@ -6,15 +6,14 @@ using System.Collections.Generic;
 public class StarData
 {
     public int savedStarCount;
+    public int a;
 
-    public StarData()
-    {
 
-    }
-
-    public StarData(int starCount)
+    public StarData(int starCount, int a)
     {
         this.savedStarCount = starCount;
+        this.a = a;
 
     }
+
 }
