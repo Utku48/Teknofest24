@@ -8,10 +8,14 @@ public class AnswerScript : MonoBehaviour
 {
     public bool isCorrect = false;
     public QuizManager quizManager;
- 
+
     public Lvl1ScoreController lvl1ScoreController;
 
     public GameObject _clickedButton;
+
+    [SerializeField] private Sprite _correctImage;
+    [SerializeField] private Sprite _wrongImage;
+    [SerializeField] private Sprite _defaultImage;
 
     private void Start()
     {
@@ -28,11 +32,11 @@ public class AnswerScript : MonoBehaviour
             Debug.Log("CorrectAnswer");
 
             quizManager.QuestionAnswerList.RemoveAt(quizManager.currentQuestionID);
-            quizManager.generateQuestion();
+            StartCoroutine(Answered());
 
             lvl1ScoreController.trueCount++;
             lvl1ScoreController.increaseScore();
-          
+
 
         }
         else
@@ -47,10 +51,28 @@ public class AnswerScript : MonoBehaviour
             {
                 quizManager.currentQuestionID = 0;
             }
-            quizManager.generateQuestion();
+            StartCoroutine(Answered());
+
         }
 
 
+    }
+
+
+    IEnumerator Answered()
+    {
+        if (isCorrect)
+        {
+            _clickedButton.gameObject.GetComponent<Image>().sprite = _correctImage;
+        }
+        else
+        {
+            _clickedButton.gameObject.GetComponent<Image>().sprite = _wrongImage;
+        }
+        yield return new WaitForSeconds(3f);
+
+        _clickedButton.gameObject.GetComponent<Image>().sprite = _defaultImage;
+        quizManager.generateQuestion();
     }
 
 }

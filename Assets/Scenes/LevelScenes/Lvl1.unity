@@ -547,7 +547,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 39.5, y: -42}
+  m_AnchoredPosition: {x: 40, y: -42}
   m_SizeDelta: {x: 125, y: 125}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &296679740
@@ -16948,10 +16948,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Yar\u0131\u015Fmaya Ba\u015Fla"
+  m_text: Yarismaya Basla
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c2f49fe8c22d94f9a9e6cd06ad490155, type: 2}
+  m_sharedMaterial: {fileID: 3074828514974314926, guid: c2f49fe8c22d94f9a9e6cd06ad490155,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -16975,7 +16976,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22.4
+  m_fontSize: 23.35
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -17848,6 +17849,9 @@ MonoBehaviour:
   quizManager: {fileID: 224471584}
   lvl1ScoreController: {fileID: 1815896796}
   _clickedButton: {fileID: 1300794284}
+  _correctImage: {fileID: 21300000, guid: 08be456a6ddbf458784cf3a37e52822f, type: 3}
+  _wrongImage: {fileID: 21300000, guid: 681db73f19fb24efe843aad713eccb43, type: 3}
+  _defaultImage: {fileID: 21300000, guid: 75e3eed89f4c445c18126fbb6d66222e, type: 3}
 --- !u!95 &1300794291
 Animator:
   serializedVersion: 5
@@ -18120,6 +18124,9 @@ MonoBehaviour:
   quizManager: {fileID: 224471584}
   lvl1ScoreController: {fileID: 1815896796}
   _clickedButton: {fileID: 1556169044}
+  _correctImage: {fileID: 21300000, guid: 08be456a6ddbf458784cf3a37e52822f, type: 3}
+  _wrongImage: {fileID: 21300000, guid: 681db73f19fb24efe843aad713eccb43, type: 3}
+  _defaultImage: {fileID: 21300000, guid: 75e3eed89f4c445c18126fbb6d66222e, type: 3}
 --- !u!95 &1556169051
 Animator:
   serializedVersion: 5
@@ -18631,6 +18638,9 @@ MonoBehaviour:
   quizManager: {fileID: 224471584}
   lvl1ScoreController: {fileID: 1815896796}
   _clickedButton: {fileID: 1659536172}
+  _correctImage: {fileID: 21300000, guid: 08be456a6ddbf458784cf3a37e52822f, type: 3}
+  _wrongImage: {fileID: 21300000, guid: 681db73f19fb24efe843aad713eccb43, type: 3}
+  _defaultImage: {fileID: 21300000, guid: 75e3eed89f4c445c18126fbb6d66222e, type: 3}
 --- !u!95 &1659536179
 Animator:
   serializedVersion: 5
@@ -18826,6 +18836,9 @@ MonoBehaviour:
   quizManager: {fileID: 224471584}
   lvl1ScoreController: {fileID: 1815896796}
   _clickedButton: {fileID: 1757706750}
+  _correctImage: {fileID: 21300000, guid: 08be456a6ddbf458784cf3a37e52822f, type: 3}
+  _wrongImage: {fileID: 21300000, guid: 681db73f19fb24efe843aad713eccb43, type: 3}
+  _defaultImage: {fileID: 21300000, guid: 75e3eed89f4c445c18126fbb6d66222e, type: 3}
 --- !u!95 &1757706757
 Animator:
   serializedVersion: 5
@@ -21640,12 +21653,12 @@ PrefabInstance:
     - target: {fileID: 22397159646990919, guid: b39e1b5a89ae0a949b9d26477ca3af35,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -130.90002
+      value: -131
       objectReference: {fileID: 0}
     - target: {fileID: 22397159646990919, guid: b39e1b5a89ae0a949b9d26477ca3af35,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -41.400024
+      value: -41
       objectReference: {fileID: 0}
     - target: {fileID: 22397159646990919, guid: b39e1b5a89ae0a949b9d26477ca3af35,
         type: 3}
