@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using DG.Tweening;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -17,6 +18,7 @@ public class AnswerScript : MonoBehaviour
     [SerializeField] private Sprite _wrongImage;
     [SerializeField] private Sprite _defaultImage;
 
+    [SerializeField] private GameObject _blockPanel;
     private void Start()
     {
         quizManager.currentQuestionID = 0;
@@ -69,9 +71,14 @@ public class AnswerScript : MonoBehaviour
         {
             _clickedButton.gameObject.GetComponent<Image>().sprite = _wrongImage;
         }
+
+        _blockPanel.SetActive(true);
+
         yield return new WaitForSeconds(3f);
 
+        _blockPanel.SetActive(false);
         _clickedButton.gameObject.GetComponent<Image>().sprite = _defaultImage;
+
         quizManager.generateQuestion();
     }
 
