@@ -46,7 +46,7 @@ Material:
     m_Floats:
     - _CrestSharpness: 0.32
     - _CrestSize: 0.614
-    - _FadeDistance: 0.19
+    - _FadeDistance: 0.04
     - _FoamAmount: 0.536
     - _FoamDepth: 0.09
     - _FoamNoiseAmount: 0
@@ -60,7 +60,7 @@ Material:
     - _RefractionFrequency: 9.52
     - _ShadowStrength: 0.285
     - _WaterClearness: 0.208
-    - _WaterDepth: 2.88
+    - _WaterDepth: 1.39
     - _WaveDirection: 0
     - _WaveFrequency: 50
     - _WaveMode: 2
