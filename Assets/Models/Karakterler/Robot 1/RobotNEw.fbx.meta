@@ -1,9 +1,54 @@
 fileFormatVersion: 2
-guid: 38c690a2109ea7c43a0b5e1a32754e09
+guid: 26824653295f381488697a371248511c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base Color
+    second: {fileID: 2100000, guid: 0e6cd1c6d75fd7e4790bf8671d2cb89c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base Color Glass
+    second: {fileID: 2100000, guid: 7bd4185595371574a9b636d28c05c532, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Black
+    second: {fileID: 2100000, guid: aee2919772501734a8e4a62b76f98d15, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Darker Base Color
+    second: {fileID: 2100000, guid: 5923c0b36ac1f6f43a079ec1e0cf177b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eye
+    second: {fileID: 2100000, guid: 7d23f76768cd23644857d7e32cfb0127, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Light
+    second: {fileID: 2100000, guid: 70d368a3f53f9e749a7ed9599097d25b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: 0d4cc2f58dbd90942af00c8574f57c3a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mouth
+    second: {fileID: 2100000, guid: 2b0dfb334c1a8444f9d3d23e4050b278, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: White
+    second: {fileID: 2100000, guid: 95b4ebfe8c95a394da10dfa597c8489d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

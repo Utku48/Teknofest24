@@ -1,29 +1,9 @@
 fileFormatVersion: 2
-guid: 71d10d161c9b2c84d80760bbdfa55cdb
+guid: e526ea1a8b456ab43ba39f280de375c3
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Ground
-    second: {fileID: 2100000, guid: 97e9bd0b29db1d246adc50097e1dded2, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.004
-    second: {fileID: 2100000, guid: 368e55db4d2ce1c4286bbee9f5171ca6, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: edited rock
-    second: {fileID: 2100000, guid: e6a352c3ce10afc43a7f569bbdb3447d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: mine
-    second: {fileID: 2100000, guid: 0daff8ec4890938459f6b1b13f7f708b, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

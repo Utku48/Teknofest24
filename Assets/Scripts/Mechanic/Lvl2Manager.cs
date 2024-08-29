@@ -2,8 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.SearchService;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using static Faces;
 
 public class Lvl2Manager : MonoBehaviour
@@ -15,10 +17,15 @@ public class Lvl2Manager : MonoBehaviour
     [SerializeField] private int trueCount;
 
     [SerializeField] private GameObject activeFace;
+    [SerializeField] private GameObject _finalPanel;
 
     [SerializeField] private TextMeshProUGUI starCount;
+    [SerializeField] private TextMeshProUGUI finalText;
 
     [SerializeField] private JsonManagerLvl2 jsonManager;
+
+    [SerializeField] private Button _rightButton;
+    [SerializeField] private Button _leftButton;
 
 
     void Start()
@@ -49,6 +56,12 @@ public class Lvl2Manager : MonoBehaviour
     void Update()
     {
         starCount.text = star.ToString();
+        finalText.text = "Tüm duygulara cevap verdin\r\nTebrikler \r\n\r\nBu seviyeden kazandığın yıldız sayısı: " + star.ToString();
+
+        if (faces.Count <= 0)
+        {
+            _finalPanel.SetActive(true);
+        }
 
     }
 
@@ -101,12 +114,14 @@ public class Lvl2Manager : MonoBehaviour
     public void RightButton()
     {
         MoveButton(FaceState.right, 10f);
+        StartCoroutine(BlockPressButtons());
 
     }
 
     public void LeftButton()
     {
         MoveButton(FaceState.left, -10f);
+        StartCoroutine(BlockPressButtons());
 
     }
 
@@ -129,12 +144,27 @@ public class Lvl2Manager : MonoBehaviour
         }
     }
 
-    private void MoveAllFaces()
+    public void Retry()
     {
-        foreach (var item in faces)
-        {
-            item.transform.DOMove(new Vector3(item.transform.position.x, item.transform.position.y - 2f, item.transform.position.z - 2f), 2f);
-        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void GoPlanetScene()
+    {
+        SceneManager.LoadScene("LevelSelectionScene");
+    }
+
+
+    IEnumerator BlockPressButtons()
+    {
+        _rightButton.gameObject.GetComponent<Button>().enabled = false;
+        _leftButton.gameObject.GetComponent<Button>().enabled = false;
+
+        yield return new WaitForSeconds(2f);
+
+        _rightButton.gameObject.GetComponent<Button>().enabled = true;
+        _leftButton.gameObject.GetComponent<Button>().enabled = true;
+
     }
 }
 

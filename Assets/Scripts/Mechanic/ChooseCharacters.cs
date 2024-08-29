@@ -22,10 +22,10 @@ public class ChooseCharacters : MonoBehaviour
     [SerializeField] private Button _leftButton;
     [SerializeField] private Button _continueButton;
 
-    [SerializeField] private GameObject _pricePanel;
+    [SerializeField] private GameObject _buyPanel;
     [SerializeField] private TextMeshProUGUI _priceText;
 
-    [SerializeField] private GameObject _buyButton;
+  
     [SerializeField] private GameObject _settingPanel;
     [SerializeField] private ParticleSystem _confetti;
 
@@ -47,7 +47,7 @@ public class ChooseCharacters : MonoBehaviour
 
     private void Update()
     {
-        _pricePanel.SetActive(a >= 2);
+        _buyPanel.SetActive(a >= 2);
         _priceText.text = (a + 1).ToString();
 
 
@@ -60,10 +60,6 @@ public class ChooseCharacters : MonoBehaviour
         _stageCh = _characters[a].gameObject;
 
 
-        if (a >= 2)
-        {
-            _buyButton.transform.DOScale(new Vector3(2.5f, 2.5f, 2.5f), 1f);
-        }
 
         if (_stageCh.GetComponent<CharactersType>().activeCharacter)
         {
@@ -103,11 +99,7 @@ public class ChooseCharacters : MonoBehaviour
         a--;
         _stageCh = _characters[a].gameObject;
 
-        if (a < 2)
-        {
-            _buyButton.transform.DOScale(Vector3.zero, 0.7f);
-        }
-
+  
         if (_stageCh.GetComponent<CharactersType>().activeCharacter)
         {
             _continueButton.GetComponent<Button>().enabled = true;
@@ -226,6 +218,6 @@ public class ChooseCharacters : MonoBehaviour
     IEnumerator LoadScene()
     {
         yield return new WaitForSeconds(4f);
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using System.Collections;
 using System.Collections.Generic;
 using System.Net.Sockets;
 using Unity.VisualScripting;
@@ -64,15 +65,14 @@ public class RocketMovement : MonoBehaviour
 
         _rocket.transform.DOPath(positions.ToArray(), 4f, PathType.CatmullRom).SetLookAt(.1f).SetEase(Ease.Linear).OnComplete(() =>
         {
-
-            _doorClose.SetActive(true);
-            _rocket.transform.DOMove(firstPos, .5f).SetEase(Ease.InExpo).OnComplete(() =>
+            _rocket.transform.DOMove(firstPos, 1f).SetEase(Ease.InExpo).OnComplete(() =>
             {
                 jSonManagerRocket.Save();
 
                 if (planetsComponent != null)
                 {
-                    SceneManager.LoadScene(lvlName);
+                    StartCoroutine(Door(lvlName));
+
                 }
                 else
                 {
@@ -86,6 +86,18 @@ public class RocketMovement : MonoBehaviour
             });
         }
         );
+
+    }
+
+
+
+
+    IEnumerator Door(string lvlName)
+    {
+        yield return new WaitForSeconds(.5f);
+        _doorClose.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(lvlName);
 
     }
 }
