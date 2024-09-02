@@ -38,7 +38,7 @@ public class Lvl2Manager : MonoBehaviour
 
         jsonManager.LoadLevel2Data();
         star = jsonManager.level2Data.Lvl2Star;
-        trueCount = jsonManager.level2Data.trueCount;
+
 
         for (int i = 1; i < faces.Count; i++)
         {
@@ -93,8 +93,10 @@ public class Lvl2Manager : MonoBehaviour
                     UpdateStarBasedOnTrueCount();
 
                     jsonManager.level2Data.Lvl2Star = star;
-                    jsonManager.level2Data.trueCount = trueCount;
                     jsonManager.SaveLevel2Data();
+
+
+
                 }
                 else
                 {
@@ -129,19 +131,10 @@ public class Lvl2Manager : MonoBehaviour
 
     private void UpdateStarBasedOnTrueCount()
     {
-        if (trueCount == 1 && star == 0)
-        {
-            star += 1;
-            //buraya her geldiğinde datadaki yıldıza 1 ekle
-        }
-        else if (trueCount == 3 && star == 1)
-        {
-            star += 1;
-        }
-        else if (trueCount == 5 && star == 2)
-        {
-            star += 1;
-        }
+        StarManager.Instance.starData.savedStarCount++;
+        star++;
+        StarManager.Instance.Save();
+
     }
 
     public void Retry()

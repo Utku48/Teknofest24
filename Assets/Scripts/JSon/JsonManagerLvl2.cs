@@ -9,12 +9,12 @@ public class JsonManagerLvl2 : MonoBehaviour
     public class Level2Data
     {
         public int Lvl2Star;
-        public int trueCount;
+       
 
-        public Level2Data(int lvl2Star, int trueCount)
+        public Level2Data(int lvl2Star)
         {
             Lvl2Star = lvl2Star;
-            this.trueCount = trueCount;
+     
         }
     }
 

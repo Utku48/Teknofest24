@@ -40,10 +40,10 @@ public class JSonMangerPlanets : MonoBehaviour
 
     }
 
-    public void Save(int winnedStarCount, string levelId, int trueCount)
+    public void Save(int winnedStarCount, string levelId)
     {
 
-        _planetsData = new PlanetsData(winnedStarCount, trueCount);
+        _planetsData = new PlanetsData(winnedStarCount);
         string saveJSon = JsonUtility.ToJson(_planetsData, true);
 
 

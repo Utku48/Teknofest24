@@ -2244,7 +2244,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _planetsData:
     wonStarCount: 0
-    trueCount: 0
 --- !u!114 &1758582071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3038,6 +3037,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1586854144749011207, guid: 7f0c8df9d5f2d1c4fac945de4e8ae6ad,
         type: 3}
+      propertyPath: isEntered
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1586854144749011207, guid: 7f0c8df9d5f2d1c4fac945de4e8ae6ad,
+        type: 3}
       propertyPath: _rocketUpPos
       value: 
       objectReference: {fileID: 1754938356}
@@ -3142,7 +3146,7 @@ PrefabInstance:
     - target: {fileID: 5425026024383686207, guid: 4237ca72cb0173649857cbe0b11643a4,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6203358118954985148, guid: 4237ca72cb0173649857cbe0b11643a4,
         type: 3}
@@ -3385,6 +3389,11 @@ PrefabInstance:
     - target: {fileID: 2599740456289255632, guid: 57ab8ab2550d1b14db4aa49424df44b3,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3749582374953695154, guid: 57ab8ab2550d1b14db4aa49424df44b3,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5448602331186404860, guid: 57ab8ab2550d1b14db4aa49424df44b3,

@@ -1704,7 +1704,7 @@ PrefabInstance:
     - target: {fileID: 7333055550782593860, guid: b39e1b5a89ae0a949b9d26477ca3af35,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2220,7 +2220,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 8
   m_Depth: -1
   m_CullingMask:
@@ -2559,6 +2559,7 @@ GameObject:
   - component: {fileID: 1366733214}
   - component: {fileID: 1366733213}
   - component: {fileID: 1366733215}
+  - component: {fileID: 1366733216}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2622,7 +2623,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level2Data:
     Lvl2Star: 0
-    trueCount: 0
+--- !u!114 &1366733216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366733212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7d88240eb28a69448f7697ebe6f1829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _starCounter: {fileID: 21170370}
+  starData:
+    savedStarCount: 0
+    a: 0
 --- !u!1 &1400075696
 GameObject:
   m_ObjectHideFlags: 0

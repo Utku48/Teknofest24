@@ -108,7 +108,7 @@ public class ButtonController : MonoBehaviour
 
     IEnumerator ActiveContinueButton()
     {
-        yield return new WaitForSeconds(19f);
+        yield return new WaitForSeconds(1f);
         continueButton.GetComponent<Button>().enabled = true;
         continueButton.GetComponent<Animator>().enabled = true;
 
@@ -117,7 +117,7 @@ public class ButtonController : MonoBehaviour
 
     IEnumerator ActiveStartButton()
     {
-        yield return new WaitForSeconds(18f);
+        yield return new WaitForSeconds(1f);
         startButton.GetComponent<Button>().enabled = true;
         startButton.GetComponent<Animator>().enabled = true;
 
@@ -128,7 +128,7 @@ public class ButtonController : MonoBehaviour
     {
         _lvl1Door.SetActive(true);
         yield return new WaitForSeconds(3f);
-        _riddlePanel.transform.DOScale(new Vector3(1f, 2.25f, 1f), 4f);
+        _riddlePanel.transform.DOScale(Vector3.one, 4f);
     }
 
 }

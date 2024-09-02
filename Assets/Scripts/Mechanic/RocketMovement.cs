@@ -62,6 +62,7 @@ public class RocketMovement : MonoBehaviour
         positions.Add(firstPos);
         positions.Add(upPos);
 
+        GameManager.Instance.ClosePlanetColliders();
 
         _rocket.transform.DOPath(positions.ToArray(), 4f, PathType.CatmullRom).SetLookAt(.1f).SetEase(Ease.Linear).OnComplete(() =>
         {
@@ -79,9 +80,7 @@ public class RocketMovement : MonoBehaviour
                     Debug.LogError("Planets component is null!");
                 }
 
-                // Update planet information in the game manager
-                GameManager.Instance.UpdatePlanets();
-
+              
 
             });
         }

@@ -203,7 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _starCounter: {fileID: 1920779085}
   starData:
-    savedStarCount: 20
+    savedStarCount: 0
     a: 0
 --- !u!114 &28237030
 MonoBehaviour:
@@ -2176,7 +2176,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 785561954}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -4287,17 +4287,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 8b8f9e6dbf0b23d4c98f74d8a6af8161,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.71682274
+      value: 0.7611941
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8b8f9e6dbf0b23d4c98f74d8a6af8161,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.71682274
+      value: 0.7611941
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8b8f9e6dbf0b23d4c98f74d8a6af8161,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.71682274
+      value: 0.7611941
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8b8f9e6dbf0b23d4c98f74d8a6af8161,
         type: 3}
@@ -4415,7 +4415,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0

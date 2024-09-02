@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     int a;
 
     [SerializeField] private GameObject _doorOpen;
-    
+
     public static GameManager Instance { get; private set; }
     private void Awake()
     {
@@ -46,24 +46,29 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
     }
+
     public void UpdatePlanets()
     {
+        planets[0].gameObject.GetComponent<SphereCollider>().enabled = true;
         GetComponent<JSonMangerPlanets>().LoadPlanetsData();
 
-        for (int i = 1; i < planets.Count; i++)
+        if (System.IO.File.Exists(Application.persistentDataPath + "/Lvl1.json"))
         {
-            if (planets[i - 1].isEntered)
-            {
-                planets[i].GetComponent<SphereCollider>().enabled = true;
-            }
+            planets[1].gameObject.GetComponent<SphereCollider>().enabled = true;
         }
+
+        //for (int i = 1; i < planets.Count; i++)
+        //{
+        //    if (planets[i - 1].isEntered)
+        //    {
+        //        planets[i].GetComponent<SphereCollider>().enabled = true;
+        //    }
+        //}
     }
 
 
     private void SetCharacterImage()
     {
-
-
         foreach (Transform item in ImageParent)
         {
             item.gameObject.SetActive(false);
@@ -71,5 +76,13 @@ public class GameManager : MonoBehaviour
         ImageParent.GetChild(a).gameObject.SetActive(true);
     }
 
-   
+
+    public void ClosePlanetColliders()
+    {
+        foreach (var item in planets)
+        {
+            item.gameObject.GetComponent<SphereCollider>().enabled = false;
+        }
+    }
+
 }

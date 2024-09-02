@@ -37,31 +37,7 @@ public class Planets : MonoBehaviour
     }
     private void Update()
     {
-        if (gotStar == 1)
-        {
-            _starImages[0].gameObject.SetActive(true);
 
-            if (!isEntered) isEntered = true;
-
-
-
-        }
-        else if (gotStar == 2)
-        {
-            _starImages[0].gameObject.SetActive(true);
-            _starImages[1].gameObject.SetActive(true);
-
-            if (!isEntered) isEntered = true;
-
-        }
-        else if (gotStar >= 3)
-        {
-            _starImages[0].gameObject.SetActive(true);
-            _starImages[1].gameObject.SetActive(true);
-            _starImages[2].gameObject.SetActive(true);
-
-            if (!isEntered) isEntered = true;
-        }
     }
 
 }

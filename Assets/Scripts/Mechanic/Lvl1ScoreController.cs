@@ -33,7 +33,7 @@ public class Lvl1ScoreController : MonoBehaviour
             _planetsData = JsonUtility.FromJson<PlanetsData>(loadJSOn);
 
             score = StarManager.Instance.starData.savedStarCount;
-            trueCount = _planetsData.trueCount;
+
         }
 
         //jSonMangerPlanets.LoadPlanetsData();
@@ -49,22 +49,10 @@ public class Lvl1ScoreController : MonoBehaviour
 
     public void increaseScore()
     {
-        if (trueCount == 1 && score == 0)
-        {
-            score += 1;
-
-        }
-        if (trueCount == 2 && score == 1)
-        {
-            score += 1;
-
-        }
-        if (trueCount == 5 && score == 2)
-        {
-            score += 1;
-
-        }
-        jSonMangerPlanets.Save(score, sahneAdi, trueCount);
+        score++;
+        StarManager.Instance.starData.savedStarCount++;
+        StarManager.Instance.Save();
+        jSonMangerPlanets.Save(score, sahneAdi);
 
     }
 
