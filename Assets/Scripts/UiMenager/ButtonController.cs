@@ -108,7 +108,7 @@ public class ButtonController : MonoBehaviour
 
     IEnumerator ActiveContinueButton()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(19f);
         continueButton.GetComponent<Button>().enabled = true;
         continueButton.GetComponent<Animator>().enabled = true;
 
@@ -117,7 +117,7 @@ public class ButtonController : MonoBehaviour
 
     IEnumerator ActiveStartButton()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(18f);
         startButton.GetComponent<Button>().enabled = true;
         startButton.GetComponent<Animator>().enabled = true;
 
