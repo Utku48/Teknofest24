@@ -102,7 +102,7 @@ public class ButtonController : MonoBehaviour
     }
     public void LoadLevelSelectionScreen()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
         StarManager.Instance.Save();
     }
 
