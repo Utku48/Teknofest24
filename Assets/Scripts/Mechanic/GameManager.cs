@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
 
     public void CharacterSelectionScreen()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
     private void Update()
     {
