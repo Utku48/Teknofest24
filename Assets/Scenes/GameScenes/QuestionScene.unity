@@ -5619,7 +5619,7 @@ RectTransform:
   m_GameObject: {fileID: 973951084}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1414, y: 1.0046717, z: 1.1414}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1025251823}
@@ -5652,8 +5652,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Testi Bitir
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 28fa03fd6e85aa34382ef262c6ecdfdb, type: 2}
+  m_sharedMaterial: {fileID: 976479289957611132, guid: 28fa03fd6e85aa34382ef262c6ecdfdb,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
