@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7f04d24d96e8d5b4582ce515ea163dfe
+guid: 29c68fc1727911b4a94dd885fea71e04
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Sniglet
+  - Seventies Sunrise Trial
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
