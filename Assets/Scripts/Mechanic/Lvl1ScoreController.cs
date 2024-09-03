@@ -53,14 +53,14 @@ public class Lvl1ScoreController : MonoBehaviour
         StarManager.Instance.starData.savedStarCount++;
         StarManager.Instance.Save();
         jSonMangerPlanets.Save(score, sahneAdi);
-
+        
     }
 
 
     private void Update()
     {
         earnedText.text = "" + score;
-        answeredAllQText.text = ("Tüm soruları cevapladın. Bu seviyede kazanılan yıldız sayısı: " + score + "");
+        answeredAllQText.text = ("Tüm soruları cevapladın. Bu seviyede kazanılan yıldız sayısı: " + trueCount + "");
     }
 
 }

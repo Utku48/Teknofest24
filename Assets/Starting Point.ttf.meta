@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 29c68fc1727911b4a94dd885fea71e04
+guid: bdf9ad12343e30748b945975dde43a76
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Seventies Sunrise Trial
+  - Starting Point
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

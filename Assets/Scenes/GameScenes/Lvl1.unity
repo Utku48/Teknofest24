@@ -15164,8 +15164,8 @@ MonoBehaviour:
     Bazen kontrol alt\u0131na al\u0131nabilirim Bazen de lavlar\u0131m\u0131 d\u0131\u015Far\u0131
     p\xFCsk\xFCrt\xFCr\xFCm S\xF6yler misin ben hangi duyguyum ? "
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1bdbbd43a253d47f99f853e49dce8edc, type: 2}
-  m_sharedMaterial: {fileID: -6360588970910393389, guid: 1bdbbd43a253d47f99f853e49dce8edc,
+  m_fontAsset: {fileID: 11400000, guid: 28fa03fd6e85aa34382ef262c6ecdfdb, type: 2}
+  m_sharedMaterial: {fileID: 976479289957611132, guid: 28fa03fd6e85aa34382ef262c6ecdfdb,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -15190,7 +15190,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 68.2
+  m_fontSize: 64.85
   m_fontSizeBase: 55
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -15273,10 +15273,10 @@ RectTransform:
   m_Father: {fileID: 626104486}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 5.300003, y: 3.2999992}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 176, y: 36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &443903647
 MonoBehaviour:
@@ -15300,8 +15300,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Devam Et
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 50c12c23294124aa48490c44ac65a9e4, type: 2}
-  m_sharedMaterial: {fileID: 7746803525459343344, guid: 50c12c23294124aa48490c44ac65a9e4,
+  m_fontAsset: {fileID: 11400000, guid: 28fa03fd6e85aa34382ef262c6ecdfdb, type: 2}
+  m_sharedMaterial: {fileID: 976479289957611132, guid: 28fa03fd6e85aa34382ef262c6ecdfdb,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -15326,7 +15326,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30.6
+  m_fontSize: 29.9
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -16205,7 +16205,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 180, y: -180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 179, y: -130}
+  m_AnchoredPosition: {x: 179, y: -50}
   m_SizeDelta: {x: 582.9602, y: 343.25488}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &812528954
@@ -16221,7 +16221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5424528, g: 0.60743695, b: 1, a: 0.6117647}
+  m_Color: {r: 0.8980393, g: 0.7960785, b: 0.627451, a: 0.7019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -16283,7 +16283,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -180, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -14.406, y: 5.3948}
+  m_AnchoredPosition: {x: -9, y: 5.3948}
   m_SizeDelta: {x: 466.7267, y: 275.5785}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &824818521
@@ -16396,9 +16396,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 0.1
   TypeSound: {fileID: 8300000, guid: 9825f13e650dda74abe54b42641a5005, type: 3}
-  yazi: Merhaba yabanci! Ben kum gezegeni astronotuyum, ben de ayni senin gibi yillar
-    once gemimde cikan bir ariza sebebiyle bu gezegene inis yapmak zorunda kaldim.
-    Artik burada yasiyorum.
+  yazi: "Merhaba yabanc\u0131! Ben kum gezegeni astronotuyum, ben de ayn\u0131 senin
+    gibi y\u0131llar \xF6nce gemimde \xE7\u0131kan bir ar\u0131za sebebiyle bu gezegene
+    ini\u015F yapmak zorunda kald\u0131m. Art\u0131k burada ya\u015F\u0131yorum."
 --- !u!114 &824818523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16421,8 +16421,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fb816217dbf38a544b459c25d1339793, type: 2}
-  m_sharedMaterial: {fileID: 2183324647381805269, guid: fb816217dbf38a544b459c25d1339793,
+  m_fontAsset: {fileID: 11400000, guid: 28fa03fd6e85aa34382ef262c6ecdfdb, type: 2}
+  m_sharedMaterial: {fileID: 976479289957611132, guid: 28fa03fd6e85aa34382ef262c6ecdfdb,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -16530,7 +16530,7 @@ RectTransform:
   m_GameObject: {fileID: 868638513}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9639537, y: 0.9639537, z: 0.9639537}
+  m_LocalScale: {x: 0.9213662, y: 0.9213662, z: 0.9213662}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1772940213}
@@ -16561,10 +16561,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Basla
+  m_text: "Ba\u015Fla"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c2f49fe8c22d94f9a9e6cd06ad490155, type: 2}
-  m_sharedMaterial: {fileID: 3074828514974314926, guid: c2f49fe8c22d94f9a9e6cd06ad490155,
+  m_fontAsset: {fileID: 11400000, guid: 28fa03fd6e85aa34382ef262c6ecdfdb, type: 2}
+  m_sharedMaterial: {fileID: 976479289957611132, guid: 28fa03fd6e85aa34382ef262c6ecdfdb,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -16589,7 +16589,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 31.45
+  m_fontSize: 29.9
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -16934,8 +16934,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Mutluluk
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ad5569965d2734880a004e3e3d7d1358, type: 2}
-  m_sharedMaterial: {fileID: 3074828514974314926, guid: ad5569965d2734880a004e3e3d7d1358,
+  m_fontAsset: {fileID: 11400000, guid: 28fa03fd6e85aa34382ef262c6ecdfdb, type: 2}
+  m_sharedMaterial: {fileID: 976479289957611132, guid: 28fa03fd6e85aa34382ef262c6ecdfdb,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -17797,8 +17797,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\xD6fke"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ad5569965d2734880a004e3e3d7d1358, type: 2}
-  m_sharedMaterial: {fileID: 3074828514974314926, guid: ad5569965d2734880a004e3e3d7d1358,
+  m_fontAsset: {fileID: 11400000, guid: 28fa03fd6e85aa34382ef262c6ecdfdb, type: 2}
+  m_sharedMaterial: {fileID: 976479289957611132, guid: 28fa03fd6e85aa34382ef262c6ecdfdb,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -18723,8 +18723,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "H\xFCz\xFCn"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9844632d790894e85a0b85fdefbfe1e5, type: 2}
-  m_sharedMaterial: {fileID: 7746803525459343344, guid: 9844632d790894e85a0b85fdefbfe1e5,
+  m_fontAsset: {fileID: 11400000, guid: 28fa03fd6e85aa34382ef262c6ecdfdb, type: 2}
+  m_sharedMaterial: {fileID: 976479289957611132, guid: 28fa03fd6e85aa34382ef262c6ecdfdb,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -19008,7 +19008,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -180, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 167, y: -98}
+  m_AnchoredPosition: {x: 167, y: -100}
   m_SizeDelta: {x: 451.903, y: 264.0134}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1859214765
@@ -19024,7 +19024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4466988, g: 0.27033645, b: 0.764151, a: 0.8666667}
+  m_Color: {r: 0.882353, g: 0.68235296, b: 0.53333336, a: 0.78039217}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -19195,17 +19195,17 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1894522274}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 4}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1859214764}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: -180, y: 180, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -30, y: 15}
-  m_SizeDelta: {x: 376.0268, y: 203.6815}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -32.5, y: 8}
+  m_SizeDelta: {x: -105, y: -60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &1894522276
 AudioSource:
@@ -19317,8 +19317,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 0.1
   TypeSound: {fileID: 8300000, guid: 9825f13e650dda74abe54b42641a5005, type: 3}
-  yazi: "Uzay geminde cikan arizayi gidermene yardim edebilirim ancak col gezegeninden
-    cikabilmenin tek yolu sana soracagim sorulara dogru cevaplari vermen\u2026"
+  yazi: "Uzay geminde \xE7\u0131kan ar\u0131zay\u0131 gidermene yard\u0131m edebilirim
+    ancak \xE7\xF6l gezegeninden \xE7\u0131kabilmenin tek yolu sana soraca\u011F\u0131m
+    sorulara do\u011Fru cevaplar\u0131 vermen\u2026"
 --- !u!114 &1894522278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19341,8 +19342,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fb816217dbf38a544b459c25d1339793, type: 2}
-  m_sharedMaterial: {fileID: 3074828514974314926, guid: c2f49fe8c22d94f9a9e6cd06ad490155,
+  m_fontAsset: {fileID: 11400000, guid: 28fa03fd6e85aa34382ef262c6ecdfdb, type: 2}
+  m_sharedMaterial: {fileID: 976479289957611132, guid: 28fa03fd6e85aa34382ef262c6ecdfdb,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -19367,8 +19368,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26.5
-  m_fontSizeBase: 26.5
+  m_fontSize: 27
+  m_fontSizeBase: 27
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 21.5
@@ -19406,7 +19407,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1894522279
@@ -19495,8 +19496,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Saskinlik
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9844632d790894e85a0b85fdefbfe1e5, type: 2}
-  m_sharedMaterial: {fileID: 7746803525459343344, guid: 9844632d790894e85a0b85fdefbfe1e5,
+  m_fontAsset: {fileID: 11400000, guid: 28fa03fd6e85aa34382ef262c6ecdfdb, type: 2}
+  m_sharedMaterial: {fileID: 976479289957611132, guid: 28fa03fd6e85aa34382ef262c6ecdfdb,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -20382,7 +20383,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: fb816217dbf38a544b459c25d1339793,
+      objectReference: {fileID: 11400000, guid: 28fa03fd6e85aa34382ef262c6ecdfdb,
         type: 2}
     - target: {fileID: 6409984178339878542, guid: 4dd222c08432bc04f9bfcb1b11d26977,
         type: 3}
@@ -21353,6 +21354,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3612417372439178982, guid: b39e1b5a89ae0a949b9d26477ca3af35,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 28fa03fd6e85aa34382ef262c6ecdfdb,
+        type: 2}
+    - target: {fileID: 3612417372439178982, guid: b39e1b5a89ae0a949b9d26477ca3af35,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 976479289957611132, guid: 28fa03fd6e85aa34382ef262c6ecdfdb,
+        type: 2}
+    - target: {fileID: 3612417372439178982, guid: b39e1b5a89ae0a949b9d26477ca3af35,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7333055550782593860, guid: b39e1b5a89ae0a949b9d26477ca3af35,
         type: 3}
       propertyPath: m_Name
@@ -21724,8 +21742,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4103525722787909087}
   m_LocalRotation: {x: -0, y: -0.99805737, z: -0.062302414, w: 0}
-  m_LocalPosition: {x: 0.32986, y: 2.3094, z: -4.0053}
-  m_LocalScale: {x: 1.35, y: 1.35, z: 1.35}
+  m_LocalPosition: {x: 0.33631, y: 2.2823, z: -3.9973}
+  m_LocalScale: {x: 1.3972085, y: 1.3972085, z: 1.3972085}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1463675089456504147}

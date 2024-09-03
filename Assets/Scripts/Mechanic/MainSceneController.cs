@@ -1,5 +1,6 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -50,6 +51,30 @@ public class MainSceneController : MonoBehaviour
         SceneManager.LoadScene(levelIndex);
     }
 
+
+    public void DeleteAllJsonFiles()
+    {
+        // JSON dosyalarının kaydedildiği klasör yolu
+        string folderPath = Application.persistentDataPath;
+
+        if (Directory.Exists(folderPath))
+        {
+            // Tüm JSON dosyalarını al
+            string[] jsonFiles = Directory.GetFiles(folderPath, "*.json");
+
+            // Her bir JSON dosyasını sil
+            foreach (string file in jsonFiles)
+            {
+                File.Delete(file);
+            }
+
+            Debug.Log("Tüm JSON dosyaları başarıyla silindi.");
+        }
+        else
+        {
+            Debug.LogError("Klasör bulunamadı: " + folderPath);
+        }
+    }
 
 
     #endregion
