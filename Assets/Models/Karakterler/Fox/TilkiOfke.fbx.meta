@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a9f95eb2eb858074aa0a20d544318f33
+guid: 553dad19a53aab34e83da02bb6803188
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,7 +7,17 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material
+      name: "KorkuAgg\u0131z"
+    second: {fileID: 2100000, guid: c49efb225e331b74685606fb1aa1e6bc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: KorkuEye
+    second: {fileID: 2100000, guid: fbc5a5b15e992b444ba159fe16a06714, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
     second: {fileID: 2100000, guid: 1d6e719239b1b5d4daee680bf84aa75c, type: 2}
   - first:
       type: UnityEngine:Material
